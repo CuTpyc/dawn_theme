@@ -9,15 +9,18 @@
 */
 {
   "sections": {
-    "landing": {
-      "type": "landing-page",
+    "form": {
+      "type": "contact-form",
       "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
+        "heading": "",
+        "heading_size": "h1",
+        "color_scheme": "scheme-1",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
   "order": [
-    "landing"
+    "contact-form"
   ]
 }
