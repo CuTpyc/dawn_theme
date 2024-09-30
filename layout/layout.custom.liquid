@@ -6,8 +6,10 @@
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="{{ 'custom-style.css' | asset_url }}">
     <script src="{{ 'custom-script.js' | asset_url }}" defer></script>
+    {{ content_for_header }}
   </head>
   <body>
+    
     <!-- Уникальный хедер -->
     {% section 'header-custom' %}
   
@@ -17,5 +19,6 @@
   
     <!-- Уникальный футер -->
     {% section 'footer-custom' %}
+    {{ content_for_footer }}
   </body>
   </html>
