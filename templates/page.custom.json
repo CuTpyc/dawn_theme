@@ -8,6 +8,7 @@
 * ------------------------------------------------------------
 */
 {
+    "layout": "layout.custom",
     "sections": {
       "main": {
         "type": "main-landing-page",
