@@ -1,22 +1,23 @@
-<div class="custom-header" style="background-color: #fff; border-bottom: 2px solid #007bff; padding: 10px;">
-  <div class="header-container" style="display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto;">
+<div class="custom-header">
+  <link rel="stylesheet" href="{{ 'custom-style.css' | asset_url }}">
+  <div class="header-container">
     <div class="logo">
       <a href="/" title="Home">
-        <img src="{{ 'Logo.png' | asset_url }}" alt="The Health Project" width="100" height="40" style="height: 40px;">
+        <img src="{{ 'Logo.png' | asset_url }}" alt="The Health Project" width="173.11" height="40">
       </a>
     </div>
-    <nav class="nav-links" style="flex-grow: 1; text-align: center;">
-      <ul style="list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 20px;">
-        <li><a href="/collections/all" style="text-decoration: none; color: #007bff;">Catalog</a></li>
-        <li><a href="/pages/categories" style="text-decoration: none; color: #333;">Categories</a></li>
-        <li><a href="/pages/about" style="text-decoration: none; color: #333;">About</a></li>
-        <li><a href="/pages/reviews" style="text-decoration: none; color: #333;">Reviews</a></li>
-        <li><a href="/pages/faq" style="text-decoration: none; color: #333;">FAQ</a></li>
-        <li><a href="/pages/contact" style="text-decoration: none; color: #333;">Contact us</a></li>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="/collections/all">Catalog</a></li>
+        <li><a href="/pages/categories">Categories</a></li>
+        <li><a href="/pages/about">About</a></li>
+        <li><a href="/pages/reviews">Reviews</a></li>
+        <li><a href="/pages/faq">FAQ</a></li>
+        <li><a href="/pages/contact">Contact us</a></li>
       </ul>
+      <div class="cta-button">
+        <a href="/collections" class="btn">Visit market</a>
+      </div>
     </nav>
-    <div class="cta-button">
-      <a href="/collections" class="btn" style="background-color: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Visit market</a>
-    </div>
   </div>
 </div>
