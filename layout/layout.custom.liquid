@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ 'custom-style.css' | asset_url }}">
+    <script src="{{ 'custom-script.js' | asset_url }}" defer></script>
+  </head>
+  <body>
+    <!-- Уникальный хедер -->
+    {% section 'header-custom' %}
+  
+    <main role="main">
+      {{ content_for_layout }}
+    </main>
+  
+    <!-- Уникальный футер -->
+    {% section 'footer-custom' %}
+  </body>
+  </html>

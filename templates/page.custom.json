@@ -1,0 +1,40 @@
+{
+  "name": "landing",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "header-landing",
+      "name": "Landing Page Header",
+      "settings": []
+    },
+    {
+      "type": "custom-section",
+      "name": "Custom Section",
+      "settings": [
+        {
+          "type": "text",
+          "id": "section_title",
+          "label": "Section Title",
+          "default": "Welcome to Our Landing Page"
+        },
+        {
+          "type": "textarea",
+          "id": "section_content",
+          "label": "Section Content",
+          "default": "Here you can find our unique offer."
+        }
+      ]
+    },
+    {
+      "type": "footer-landing",
+      "name": "Landing Page Footer",
+      "settings": []
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "category": "Custom"
+    }
+  ]
+}
