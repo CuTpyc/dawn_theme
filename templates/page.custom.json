@@ -1,40 +1,24 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
-  "name": "landing",
-  "settings": [],
-  "blocks": [
-    {
-      "type": "header-landing",
-      "name": "Landing Page Header",
-      "settings": []
-    },
-    {
-      "type": "custom-section",
-      "name": "Custom Section",
-      "settings": [
-        {
-          "type": "text",
-          "id": "section_title",
-          "label": "Section Title",
-          "default": "Welcome to Our Landing Page"
-        },
-        {
-          "type": "textarea",
-          "id": "section_content",
-          "label": "Section Content",
-          "default": "Here you can find our unique offer."
+    "sections": {
+      "main": {
+        "type": "main-landing-page",
+        "settings": {
+          "padding_top": 36,
+          "padding_bottom": 36
         }
-      ]
+      },
     },
-    {
-      "type": "footer-landing",
-      "name": "Landing Page Footer",
-      "settings": []
-    }
-  ],
-  "presets": [
-    {
-      "name": "Default",
-      "category": "Custom"
-    }
-  ]
-}
+    "order": [
+      "main",
+    ]
+  }
+  
