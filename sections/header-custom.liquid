@@ -1,31 +1,32 @@
-<div class="custom-header">
-  <link rel="stylesheet" href="{{ 'custom-style.css' | asset_url }}">
-  <div class="header-container">
+<header>
+  <div class="container">
     <div class="logo">
-      <a href="/" title="Home">
-        <img src="{{ 'Logo.png' | asset_url }}" alt="The Health Project" width="173.11" height="40">
-      </a>
+      <img src="{{ 'Logo.png' | asset_url }}" alt="THP Logo" width="173.11" height="40" />
     </div>
     <nav class="nav-links">
-      <ul>
-        <li><a href="/collections/all">Catalog</a></li>
-        <li><a href="/pages/categories">Categories</a></li>
-        <li><a href="/pages/about">About</a></li>
-        <li><a href="/pages/reviews">Reviews</a></li>
-        <li><a href="/pages/faq">FAQ</a></li>
-        <li><a href="/pages/contact">Contact us</a></li>
-      </ul>
-<<<<<<< HEAD
-      
+      <a href="{{ routes.collections_url }}">Catalog</a>
+      <a href="#">Categories</a>
+      <a href="{{ routes.page_url | append: 'about' }}">About</a>
+      <a href="{{ routes.page_url | append: 'reviews' }}">Reviews</a>
+      <a href="{{ routes.page_url | append: 'faq' }}">FAQ</a>
+      <a href="{{ routes.page_url | append: 'contact' }}">Contact us</a>
     </nav>
-    <div class="cta-button">
-      <a href="/collections" class="btn">Visit market</a>
+    <a href="{{ routes.collections_url }}" class="cta-button">Visit Market</a>
+    <div class="burger-menu">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-=======
-      <div class="cta-button">
-        <a href="/collections" class="btn">Visit market</a>
-      </div>
-    </nav>
->>>>>>> 08147d044cd77101a1cafe7f14bc8d0a2bf9ca86
   </div>
-</div>
+  <div class="mobile-menu">
+    <nav class="mobile-menu-links">
+      <a href="{{ routes.collections_url }}">Catalog</a>
+      <a href="#">Categories</a>
+      <a href="{{ routes.page_url | append: 'about' }}">About</a>
+      <a href="{{ routes.page_url | append: 'reviews' }}">Reviews</a>
+      <a href="{{ routes.page_url | append: 'faq' }}">FAQ</a>
+      <a href="{{ routes.page_url | append: 'contact' }}">Contact us</a>
+    </nav>
+    <a href="{{ routes.collections_url }}" class="cta-button">Visit Market</a>
+  </div>
+</header>

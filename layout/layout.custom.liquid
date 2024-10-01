@@ -2,10 +2,10 @@
   <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="{{ 'custom-style.css' | asset_url }}">
-    <script src="{{ 'custom-script.js' | asset_url }}" defer></script>
+    
     {{ content_for_header }}
   </head>
   <body>
@@ -20,5 +20,6 @@
     <!-- Уникальный футер -->
     {% section 'footer-custom' %}
     {{ content_for_footer }}
+    <script src="{{ 'burger-menu.js' | asset_url }}" defer></script>
   </body>
   </html>
