@@ -10,18 +10,22 @@
     {{ content_for_header }}
   </head>
   <body>
-    
-    <!-- Уникальный хедер -->
+    <header>
     {% section 'header-custom' %}
+    </header>
+    
   
     <main role="main">
       {{ content_for_layout }}
       {% section 'hero-custom' %}
     </main>
   
-    <!-- Уникальный футер -->
-    {% section 'footer-custom' %}
-    {{ content_for_footer }}
+    <footer class="landing-footer">
+      {% section 'footer-custom' %}
+      {% section 'post-footer-socials' %}
+      {{ content_for_footer }}
+    </footer>
+    
     <script src="{{ 'burger-menu.js' | asset_url }}" defer></script>
   </body>
   </html>

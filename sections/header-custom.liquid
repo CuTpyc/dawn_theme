@@ -1,4 +1,4 @@
-<header>
+
   {% assign menu = linklists['menu-for-landing'] %}
 
   <div class="container" style="padding-left:{{section.settings.padding-left}};padding-right:{{section.settings.padding-right}};{% if section.settings.header_aligment == 'right' %}flex-direction: row-reverse;{% endif %}">
@@ -39,7 +39,6 @@
       <a href="{{ routes.collections_url }}" class="cta-button-mobile">{{ section.settings.cta_button_text }}</a>
     </nav>
   </div>
-</header>
 
 {% schema %}
   {

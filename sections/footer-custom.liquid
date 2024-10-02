@@ -1,29 +1,22 @@
-<footer class="landing-footer">
+
     {% assign menu = linklists['menu-for-landing'] %}
 
-    <div class="container" style="padding-left:{{section.settings.padding-left}};padding-right:{{section.settings.padding-right}};justify-content: space-between;{% if section.settings.footer_aligment == 'right' %}flex-direction: row-reverse;{% endif %}">
-      <div class="logo">
+    <div class="container-footer" style="padding-left:{{section.settings.padding-left}};padding-right:{{section.settings.padding-right}};justify-content: space-between;{% if section.settings.footer_aligment == 'right' %}flex-direction: row-reverse;{% endif %}">
+      <div class="logo-footer">
         {%- if section.settings.logo_image != blank -%}
-        <img src="{{ section.settings.logo_image | image_url: width: 173.11, height: 40 }}" alt="THP Logo" width="173.11" height="40" />
+            <img src="{{ section.settings.logo_image | image_url: width: 173.11, height: 40 }}" alt="THP Logo" width="173.11" height="40" />
           {%- else -%}
-          <img src="{{ 'Logo.png' | asset_url }}" alt="THP Logo" width="173.11" height="40" />
+            <img src="{{ 'Logo.png' | asset_url }}" alt="THP Logo" width="173.11" height="40" />
         {%- endif -%}
-        </div>
-      <nav class="nav-links">
+      </div>
+      <nav class="nav-links-footer">
         
         {% for link in menu.links %}
           <a href="{{ link.url }}">{{link.title}}</a>
         {% endfor %}
       </nav>
-      <div class="burger-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
     </div>
-
-
-  </footer>
+    
 
   {% schema %}
   {
