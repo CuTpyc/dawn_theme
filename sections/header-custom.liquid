@@ -1,17 +1,21 @@
 <header>
-  <div class="container">
+  {% assign menu = linklists['menu-for-landing'] %}
+
+  <div class="container" style="padding-left:{{section.settings.padding-left}};padding-right:{{section.settings.padding-right}};{% if section.settings.header_aligment == 'right' %}flex-direction: row-reverse;{% endif %}">
     <div class="logo">
-      <img src="{{ 'Logo.png' | asset_url }}" alt="THP Logo" width="173.11" height="40" />
+      {%- if section.settings.logo_image != blank -%}
+        <img src="{{ section.settings.logo_image | image_url: width: 173.11, height: 40 }}" alt="THP Logo" width="173.11" height="40" />
+          {%- else -%}
+          <img src="{{ 'Logo.png' | asset_url }}" alt="THP Logo" width="173.11" height="40" />
+        {%- endif -%}
     </div>
     <nav class="nav-links">
-      <a href="{{ routes.collections_url }}">Catalog</a>
-      <a href="#">Categories</a>
-      <a href="{{ routes.page_url | append: 'about' }}">About</a>
-      <a href="{{ routes.page_url | append: 'reviews' }}">Reviews</a>
-      <a href="{{ routes.page_url | append: 'faq' }}">FAQ</a>
-      <a href="{{ routes.page_url | append: 'contact' }}">Contact us</a>
+      
+      {% for link in menu.links %}
+        <a href="{{ link.url }}">{{link.title}}</a>
+      {% endfor %}
     </nav>
-    <a href="{{ routes.collections_url }}" class="cta-button">Visit Market</a>
+    <a href="{{ routes.collections_url }}" class="cta-button">{{ section.settings.cta_button_text }}</a>
     <div class="burger-menu">
       <span></span>
       <span></span>
@@ -20,62 +24,75 @@
   </div>
   <div class="mobile-menu">
     <nav class="mobile-menu-links">
-      <div class="mobile-menu-hr"></div>
-      <div class="mobile-link-body">
-        <div class="mobile-link-count">01</div>
-        <div class="mobile-link-item">
-          <a class="link-mobile" href="{{ routes.collections_url }}">Catalog</a>
-        </div>
+      {% for link in menu.links %}
+        <div class="mobile-menu-hr"></div>
+        <div class="mobile-link-body">
+          <div class="mobile-link-count">01</div>
+          <div class="mobile-link-item">
+            <a class="link-mobile" href="{{ link.url }}">{{link.title}}</a>
+          </div>
         
-      </div>
+        </div>
+      {% endfor %}
       
       <div class="mobile-menu-hr"></div>
-      <div class="mobile-link-body">
-        <div class="mobile-link-count">01</div>
-        <div class="mobile-link-item">
-          <a class="link-mobile" href="#">Categories</a>
-        </div>
-        
-      </div>
-      
-      <div class="mobile-menu-hr"></div>
-      <div class="mobile-link-body">
-        <div class="mobile-link-count">01</div>
-        <div class="mobile-link-item">
-          <a class="link-mobile" href="{{ routes.page_url | append: 'about' }}">About</a>
-        </div>
-        
-      </div>
-     
-      <div class="mobile-menu-hr"></div>
-      <div class="mobile-link-body">
-        <div class="mobile-link-count">01</div>
-        <div class="mobile-link-item">
-          <a class="link-mobile" href="{{ routes.page_url | append: 'reviews' }}">Reviews</a>
-        </div>
-        
-      </div>
-      
-      <div class="mobile-menu-hr"></div>
-      <div class="mobile-link-body">
-        <div class="mobile-link-count">01</div>
-        <div class="mobile-link-item">
-          <a class="link-mobile" href="{{ routes.page_url | append: 'faq' }}">FAQ</a>
-        </div>
-        
-      </div>
-      
-      <div class="mobile-menu-hr"></div>
-      <div class="mobile-link-body">
-        <div class="mobile-link-count">01</div>
-        <div class="mobile-link-item">
-          <a class="link-mobile" href="{{ routes.page_url | append: 'contact' }}">Contact us</a>
-        </div>
-        
-      </div>
-      
-      <div class="mobile-menu-hr"></div>
-      <a href="{{ routes.collections_url }}" class="cta-button-mobile">Visit Market</a>
+      <a href="{{ routes.collections_url }}" class="cta-button-mobile">{{ section.settings.cta_button_text }}</a>
     </nav>
   </div>
 </header>
+
+{% schema %}
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo_image",
+        "label": "Upload Logo",
+      },
+      {
+      	"type": "radio",
+        "id": "header_aligment",
+        "label": "Header aligment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Normal"
+            },
+            {
+              "value": "right",
+              "label": "Reversed"
+            }
+          ],
+        "default": "left"
+      },
+      {
+        "type": "text",
+        "id": "cta_button_text",
+        "label": "CTA Button Text",
+        "default": "Visit Market" 
+      },
+      {
+        "type": "range",
+        "id": "padding-left",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding left",
+        "default": 50
+      },
+      {
+        "type": "range",
+        "id": "padding-right",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding right",
+        "default": 50
+      }
+          ]
+      }
+      
+{% endschema %}

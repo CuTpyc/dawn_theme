@@ -11,10 +11,11 @@ header {
 
 .container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
 }
+
 
 .logo img {
   width: 173.11px;
