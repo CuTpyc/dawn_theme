@@ -20,13 +20,62 @@
   </div>
   <div class="mobile-menu">
     <nav class="mobile-menu-links">
-      <a href="{{ routes.collections_url }}">Catalog</a>
-      <a href="#">Categories</a>
-      <a href="{{ routes.page_url | append: 'about' }}">About</a>
-      <a href="{{ routes.page_url | append: 'reviews' }}">Reviews</a>
-      <a href="{{ routes.page_url | append: 'faq' }}">FAQ</a>
-      <a href="{{ routes.page_url | append: 'contact' }}">Contact us</a>
+      <div class="mobile-menu-hr"></div>
+      <div class="mobile-link-body">
+        <div class="mobile-link-count">01</div>
+        <div class="mobile-link-item">
+          <a class="link-mobile" href="{{ routes.collections_url }}">Catalog</a>
+        </div>
+        
+      </div>
+      
+      <div class="mobile-menu-hr"></div>
+      <div class="mobile-link-body">
+        <div class="mobile-link-count">01</div>
+        <div class="mobile-link-item">
+          <a class="link-mobile" href="#">Categories</a>
+        </div>
+        
+      </div>
+      
+      <div class="mobile-menu-hr"></div>
+      <div class="mobile-link-body">
+        <div class="mobile-link-count">01</div>
+        <div class="mobile-link-item">
+          <a class="link-mobile" href="{{ routes.page_url | append: 'about' }}">About</a>
+        </div>
+        
+      </div>
+     
+      <div class="mobile-menu-hr"></div>
+      <div class="mobile-link-body">
+        <div class="mobile-link-count">01</div>
+        <div class="mobile-link-item">
+          <a class="link-mobile" href="{{ routes.page_url | append: 'reviews' }}">Reviews</a>
+        </div>
+        
+      </div>
+      
+      <div class="mobile-menu-hr"></div>
+      <div class="mobile-link-body">
+        <div class="mobile-link-count">01</div>
+        <div class="mobile-link-item">
+          <a class="link-mobile" href="{{ routes.page_url | append: 'faq' }}">FAQ</a>
+        </div>
+        
+      </div>
+      
+      <div class="mobile-menu-hr"></div>
+      <div class="mobile-link-body">
+        <div class="mobile-link-count">01</div>
+        <div class="mobile-link-item">
+          <a class="link-mobile" href="{{ routes.page_url | append: 'contact' }}">Contact us</a>
+        </div>
+        
+      </div>
+      
+      <div class="mobile-menu-hr"></div>
+      <a href="{{ routes.collections_url }}" class="cta-button-mobile">Visit Market</a>
     </nav>
-    <a href="{{ routes.collections_url }}" class="cta-button">Visit Market</a>
   </div>
 </header>

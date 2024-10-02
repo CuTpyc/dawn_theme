@@ -49,6 +49,8 @@ header {
   text-align: center;
 }
 
+
+
 .burger-menu {
   display: none;
   cursor: pointer;
@@ -99,22 +101,52 @@ header {
 .mobile-menu-links {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 20px;
   text-decoration: none;
   color: #231F20;
   width: 100%;
+  font-family: Montserrat;
 }
 
-.mobile-menu-links a {
+.mobile-menu-links .link-mobile {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   position: relative;
+  text-align: left;
+  color: #231F20;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 42px;
+  text-decoration: none;
+}
+
+.mobile-menu-hr {
   border-top: 1px solid #DDDDDD;
   width: 100%;
 }
 
-.mobile-menu-links a::before {
+.mobile-link-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  width: 100%;
+}
+
+.mobile-link-item{
+  width: 60%;
+  text-align: left;
+}
+
+.mobile-link-count {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #808080;
+  margin-top: -14px;
+}
+
+/* .mobile-menu-links a::before {
   content: "01";
   position: absolute;
   width: 17px;
@@ -122,8 +154,16 @@ header {
   left: -258px;
   top: 0;
   color: #808080;
+  text-align: center;
+} */
+.cta-button-mobile {
+  background-color: #42ABDE;
+  color: white;
+  padding: 14px 30px;
+  border-radius: 100px;
+  text-decoration: none;
+  text-align: center;
 }
-
 .mobile-menu.open {
   display: flex;
   opacity: 1;
