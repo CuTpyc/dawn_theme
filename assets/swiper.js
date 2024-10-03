@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 var swiper = new Swiper('.swiper', {
     slidesPerView: 1,
-    spaceBetween: 10,
+    spaceBetween: 0,
     loop: true,
     pagination: {
     el: '.swiper-pagination',

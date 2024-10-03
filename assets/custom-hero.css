@@ -1,0 +1,55 @@
+.hero-section {
+ width: 100%;
+ display: flex;
+ padding: 60px 0;
+}
+  
+  .swiper {
+    position: relative;
+    width: 100%;
+  }
+  
+  .swiper-wrapper {
+    width: 100%;
+  }
+  
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-size: cover;
+    background-position: center;
+   }
+  
+  .content-left {
+
+  }
+  
+  .content-right {
+    }
+  
+  .swiper-button-prev,
+  .swiper-button-next {
+    position: absolute;
+  }
+  
+  .swiper-button-prev:hover,
+  .swiper-button-next:hover {
+
+  }
+  
+  h1 {
+  }
+  
+  p {
+  }
+  
+  @media (max-width: 768px) {
+    .swiper-slide {
+     }
+  
+    .content-left,
+    .content-right {
+
+    }
+  }
