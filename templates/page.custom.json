@@ -8,18 +8,15 @@
 * ------------------------------------------------------------
 */
 {
-    "layout": "layout.custom",
-    "sections": {
-      "main": {
-        "type": "main-landing-page",
-        "settings": {
-          "padding_top": 36,
-          "padding_bottom": 36
-        }
-      },
-    },
-    "order": [
-      "main",
-    ]
-  }
-  
+  "layout": "layout.custom",
+  "sections": {
+    "main": {
+      "type": "page-custom",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

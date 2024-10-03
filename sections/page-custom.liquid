@@ -1,0 +1,19 @@
+<div class="hero-section">
+  <div class="swiper">
+      <div class="swiper-wrapper">
+          {% for product in collections['protein'].products %}
+            <div class="swiper-slide">  
+                <div class="content-left">
+                  
+                    <h1>{{ product.title }} <span>{{ product.price | money }}</span></h1>
+                    <p> {{ product.description }}</p>
+                    
+                </div>
+                <div class="content-right">
+                  <img src="{{ product.featured_image | image_url: width: 300 }}" alt="{{ product.title }}" width="300" height="auto" />
+                </div>
+            </div>
+          {% endfor %}
+      </div>
+  </div>
+</div>

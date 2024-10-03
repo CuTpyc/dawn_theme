@@ -1,7 +1,7 @@
-
+<link rel="stylesheet" href="{{ 'custom-header.css' | asset_url }}">
   {% assign menu = linklists['menu-for-landing'] %}
 
-  <div class="container" style="padding-left:{{section.settings.padding-left}};padding-right:{{section.settings.padding-right}};{% if section.settings.header_aligment == 'right' %}flex-direction: row-reverse;{% endif %}">
+  <div class="container-header" style="padding-left:{{section.settings.padding-left}};padding-right:{{section.settings.padding-right}};{% if section.settings.header_aligment == 'right' %}flex-direction: row-reverse;{% endif %}">
     <div class="logo">
       {%- if section.settings.logo_image != blank -%}
         <img src="{{ section.settings.logo_image | image_url: width: 173.11, height: 40 }}" alt="THP Logo" width="173.11" height="40" />

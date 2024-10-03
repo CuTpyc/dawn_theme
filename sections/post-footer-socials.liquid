@@ -1,91 +1,55 @@
-<div class="social-links-section">
-    <div class="container">
-      <div class="social-links-grid">
-        {% for block in section.blocks %}
-          <div class="social-block">
-            <p class="social-title">{{ block.settings.social_name }}</p>
-            <a href="{{ block.settings.social_link }}" class="social-link" target="_blank">
-              {{ block.settings.social_value }}
-              <span class="icon-arrow">↗</span>
-            </a>
+<link rel="stylesheet" href="{{ 'custom-footer-socials.css' | asset_url }}">
+
+<section class="social-links-section">
+  <div class="container">
+    <div class="social-links-grid">
+      {% for block in section.blocks %}
+        <div class="social-link-card">
+          <div class="social-platform-name">{{ block.settings.platform_name }}</div>
+          <div class="social-profile-handle">
+            <a href="{{ block.settings.profile_url }}" target="_blank">{{ block.settings.profile_handle }}</a>
+            <div class="link-arrow"><span>↗</span></div>
           </div>
-        {% endfor %}
-      </div>
+        </div>
+      {% endfor %}
     </div>
   </div>
-  
+</section>
 
-  {% schema %}
-  {
-    "name": "Social Links Section",
-    "settings": [],
-    "blocks": [
-      {
-        "type": "social_link", 
-        "name": "Social Link Block",
-        "settings": [
-          {
-            "type": "text",
-            "id": "social_name",
-            "label": "Social Platform Name",
-            "default": "Gmail"
-          },
-          {
-            "type": "text",
-            "id": "social_value",
-            "label": "Social Link Text",
-            "default": "example.lorem@gmail.com"
-          },
-          {
-            "type": "url",
-            "id": "social_link",
-            "label": "Social Link URL",
-            "default": "/collections"
-          }
-        ]
-      }
-    ],
-    "presets": [
-      {
-        "name": "Social Links",
-        "category": "Custom"
-      }
-    ]
-  }
-  {% endschema %}
-  
 
-{% style %}
-.social-links-grid {
-  display: flex;
-  gap: 20px;
+
+{% schema %}
+{
+  "name": "Social Links",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "social-link",
+      "name": "Social Link",
+      "settings": [
+        {
+          "type": "text",
+          "id": "platform_name",
+          "label": "Platform Name",
+          "default": "Gmail"
+        },
+        {
+          "type": "text",
+          "id": "profile_handle",
+          "label": "Profile Handle",
+          "default": "@example.lorem"
+        },
+        {
+          "type": "url",
+          "id": "profile_url",
+          "label": "Profile URL",
+          "default": "/"
+        }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "Social Link",
+  }]
 }
-
-.social-block {
-  background-color: #f7f7f7;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: left;
-  flex: 1;
-}
-
-.social-title {
-  color: #888;
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-.social-link {
-  color: #0073e6;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-
-.social-link .icon-arrow {
-  margin-left: 8px;
-  font-size: 16px;
-  color: #0073e6;
-}
-{% endstyle %}
+{% endschema %}

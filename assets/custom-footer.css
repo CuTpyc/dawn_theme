@@ -14,6 +14,8 @@ footer {
   justify-content: space-between;
   align-items: center;
   text-align: center;
+  max-width: 1410px;
+  margin: 0 auto;
 }
 
 
