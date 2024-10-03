@@ -10,25 +10,34 @@
                 <div class="content-left">
                     <div class="product-text">
                         <div class="product-title">
-                            <h2 class="text">{{ product.title }}</h2>
-                            {% for variant in product.variants %}
-                                <span> {{ variant.weight }} {{ variant.weight_unit }} </span>
-                            {% endfor %}
+                            <h2 class="text">
+                                {{ product.title }}
+                                {% for variant in product.variants %}
+                                    {{ variant.weight }}{{ variant.weight_unit }}
+                                {% endfor %}
+                            </h2>
+                            
                         </div>
-                        <p class="product-description"> {{ product.description }}</p>  
+                        
+                            {{ product.description }}
+                        
                     </div>
-                    <div class="product-button">Buy now {{ product.price | money }}</div>
+                    <div class="product-button"><span>Buy now {{ product.price | money }}</span></div>
                 </div>
                 <div class="content-right">
                     <img src="{{ product.featured_image | image_url: width: 1100, height: 861 }}" alt="THP Logo" width="1100" height="861" /> 
                 </div>
+                
             </div>
             
           {% endfor %}
           
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="hero-buttons">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            
+        </div>
   </div>
 </div>
 <script src="{{ 'swiper.js' | asset_url }}" defer></script>

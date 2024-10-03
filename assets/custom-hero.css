@@ -11,6 +11,7 @@
   
   .swiper-wrapper {
     width: 100%;
+    position: relative;
   }
   
   .swiper-slide {
@@ -22,15 +23,99 @@
    }
   
   .content-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 107px;
+    
+  }
+  .product-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    
+  }
 
+  .product-text p{
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    color: #808080;
   }
   
+  .product-title {
+    display: flex;
+  }
+
+  .text{
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    color: #231F20;
+  }
+
+ 
+
+
+
+
+  .product-button{
+    background-color: #42ABDE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 30px;
+    border-radius: 100px;
+    max-width: 181px;
+  }
+
+  .product-button span{
+    color: #fff;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 21px;
+  }
+
   .content-right {
+    margin-right: 250px;
     }
+
+  .hero-buttons {
+    
+    position: absolute;
+    max-width: 130px;
+    max-height: 60px;
+    bottom: 150px;
+    right: 320px;
+  }
   
   .swiper-button-prev,
   .swiper-button-next {
-    position: absolute;
+    border-radius: 50%; 
+    border: 1px solid #dddddd;
+    width: 60px;
+    height: 60px;
+    color: white; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+   
+  }
+
+  .swiper-button-prev::after {
+    content: '→'; 
+    font-size: 24px; 
+    color: #42ABDE; 
+    font-weight: bold;
+    
+  }
+  
+  .swiper-button-next::after {
+    content: '←'; 
+    font-size: 24px; 
+    color: #42ABDE; 
+    font-weight: bold;
   }
   
   .swiper-button-prev:hover,
