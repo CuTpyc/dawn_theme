@@ -1,25 +1,31 @@
 .hero-section {
  width: 100%;
  display: flex;
- padding: 60px 0;
+ padding: 60px 20px;
 }
   
   .swiper {
-    position: relative;
     width: 100%;
+    position: relative;
   }
   
   .swiper-wrapper {
     width: 100%;
-    position: relative;
   }
   
   .swiper-slide {
     display: flex;
-    justify-content: center;
+    
+   }
+
+   .product-card{ 
+    display: flex;
     align-items: flex-end;
     background-size: cover;
     background-position: center;
+    max-width: 1410px;
+    width: 100%;
+    margin: 0 auto;
    }
   
   .content-left {
@@ -27,7 +33,6 @@
     flex-direction: column;
     gap: 20px;
     padding-bottom: 107px;
-    
   }
   .product-text {
     display: flex;
@@ -54,11 +59,6 @@
     color: #231F20;
   }
 
- 
-
-
-
-
   .product-button{
     background-color: #42ABDE;
     display: flex;
@@ -77,46 +77,83 @@
   }
 
   .content-right {
-    margin-right: 250px;
+    max-width: 1200px;
+    max-height: 870px;
+    width: 100%;
+    height: 100%;
+    }
+    .content-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .swiper-hero-buttons{
+      position: absolute;
+      display: flex;
+      justify-content: space-around;
+      bottom: 150px;
+      right: 10%;
+      
     }
 
-  .hero-buttons {
-    
-    position: absolute;
-    max-width: 130px;
-    max-height: 60px;
-    bottom: 150px;
-    right: 320px;
-  }
-  
-  .swiper-button-prev,
-  .swiper-button-next {
-    border-radius: 50%; 
-    border: 1px solid #dddddd;
-    width: 60px;
-    height: 60px;
-    color: white; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-   
-  }
+    .swiper-button-next, 
+    .swiper-button-prev{
+      position: absolute;
+      text-align: center;
+      width: 60px;
+      height: 60px;
+      background-color: none;
+      border: 1px solid #DDDDDD ;
+      border-radius: 50%;
+      color: #42ABDE;
+      font-size: 40px;
+      overflow: hidden;
+      right: 0;
+    }
 
-  .swiper-button-prev::after {
-    content: '→'; 
-    font-size: 24px; 
-    color: #42ABDE; 
-    font-weight: bold;
-    
-  }
-  
-  .swiper-button-next::after {
-    content: '←'; 
-    font-size: 24px; 
-    color: #42ABDE; 
-    font-weight: bold;
-  }
+    .swiper-button-next > div, 
+    .swiper-button-prev > div{
+      color: #42ABDE;
+      width: 60px;
+      height: 60px;
+    }
+
+    .swiper-button-next::after {
+      content: '';
+    }
+
+    .swiper-button-prev::after {
+      content: '';
+    }
+
+    .autoplay-progress {
+      position: absolute;
+      
+      z-index: 10;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #42ABDE;
+    }
+
+    .autoplay-progress svg {
+      --progress: 0;
+      position: absolute;
+      left: -3px;
+      top: -3px;
+      z-index: 10;
+      width: 110%;
+      height: 110%;
+      stroke-width: 1px;
+      stroke: #42ABDE;
+      fill: none;
+      stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
+      stroke-dasharray: 125.6;
+      transform: rotate(-90deg);
+    }
   
   .swiper-button-prev:hover,
   .swiper-button-next:hover {
@@ -129,12 +166,50 @@
   p {
   }
   
-  @media (max-width: 768px) {
-    .swiper-slide {
-     }
-  
-    .content-left,
+  @media (max-width: 1366px) {
     .content-right {
+      max-width: 800px;
+      max-height: 626px;
+      }
+    .swiper-hero-buttons{
+      bottom: 75px;
+    }
+    .content-left {
+      
+      padding-bottom: 50px;
+    }
+    .product-button{
+      max-width: 100%;
+    }
+  }
 
+  @media (max-width: 768px) {
+    .product-card{ 
+      display: flex;
+      flex-direction: column-reverse;
+      
+      align-items: flex-start;
+      gap: 41px;
+      background-size: cover;
+      background-position: center;
+      max-width: 1410px;
+      width: 100%;
+      margin: 0 auto;
+     }
+
+     .swiper-hero-buttons{
+      bottom: 83px;
+    }
+    .swiper-hero-buttons{
+      
+      right: 18.5%;
+      
+    }
+    .product-button{
+      
+      width: 50%;
+    }
+    .content-left {
+      width: 100%;
     }
   }

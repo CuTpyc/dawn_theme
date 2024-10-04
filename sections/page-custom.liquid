@@ -1,43 +1,54 @@
 <link rel="stylesheet" href="{{ 'custom-hero.css' | asset_url }}">
 <div class="hero-section">
     
-  <div class="swiper">
+  <div class="swiper swiper-hero">
         <div class="swiper-wrapper">
 
           {% for product in collections['protein'].products %}
             
-            <div class="swiper-slide">  
-                <div class="content-left">
-                    <div class="product-text">
-                        <div class="product-title">
-                            <h2 class="text">
-                                {{ product.title }}
-                                {% for variant in product.variants %}
-                                    {{ variant.weight }}{{ variant.weight_unit }}
-                                {% endfor %}
-                            </h2>
+            <div class="swiper-slide"> 
+                <div class="product-card">
+                    <div class="content-left">
+                        <div class="product-text">
+                            <div class="product-title">
+                                <h2 class="text">
+                                    {{ product.title }}
+                                    {% for variant in product.variants %}
+                                        {{ variant.weight }}{{ variant.weight_unit }}
+                                    {% endfor %}
+                                </h2>
+                                
+                            </div>
+                            
+                                {{ product.description }}
                             
                         </div>
-                        
-                            {{ product.description }}
-                        
+                        <div class="product-button"><span>Buy now {{ product.price | money }}</span></div>
                     </div>
-                    <div class="product-button"><span>Buy now {{ product.price | money }}</span></div>
+                    <div class="content-right">
+                        <img src="{{ product.featured_image | image_url: width: 1100, height: 861 }}" alt="THP Logo" width="1100" height="861" /> 
+                    </div>
                 </div>
-                <div class="content-right">
-                    <img src="{{ product.featured_image | image_url: width: 1100, height: 861 }}" alt="THP Logo" width="1100" height="861" /> 
-                </div>
-                
             </div>
             
           {% endfor %}
           
         </div>
-        <div class="hero-buttons">
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-            
+        <div class="swiper-hero-buttons">
+            <div class="swiper-button-next"><div>←</div></div>
+            <div class="swiper-button-prev">
+                <div>→</div>
+                <div class="autoplay-progress">
+                    <svg viewBox="0 0 48 48">
+                    <circle cx="24" cy="24" r="20"></circle>
+                    </svg>
+                    <span></span>
+                </div>
+            </div>
         </div>
+        
+        
+        
   </div>
 </div>
 <script src="{{ 'swiper.js' | asset_url }}" defer></script>
