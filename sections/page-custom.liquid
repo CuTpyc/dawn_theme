@@ -4,34 +4,37 @@
   <div class="swiper swiper-hero">
         <div class="swiper-wrapper">
 
-          {% for product in collections['protein'].products %}
+            {% assign collection_handle = section.settings.selected_collection %}
+
+            {% if collection_handle != blank %}
+              {% assign collection = collections[collection_handle] %}
+            {% else %}
+              {% assign collection = collections['all'] %}
+            {% endif %}
             
-            <div class="swiper-slide"> 
+            {% for product in collection.products %}
+              <div class="swiper-slide">
                 <div class="product-card">
-                    <div class="content-left">
-                        <div class="product-text">
-                            <div class="product-title">
-                                <h2 class="text">
-                                    {{ product.title }}
-                                    {% for variant in product.variants %}
-                                        {{ variant.weight }}{{ variant.weight_unit }}
-                                    {% endfor %}
-                                </h2>
-                                
-                            </div>
-                            
-                                {{ product.description }}
-                            
-                        </div>
-                        <div class="product-button"><span>Buy now {{ product.price | money }}</span></div>
+                  <div class="content-left">
+                    <div class="product-text">
+                      <div class="product-title">
+                        <h2 class="text">
+                          {{ product.title }}
+                          {% for variant in product.variants %}
+                            {{ variant.weight }}{{ variant.weight_unit }}
+                          {% endfor %}
+                        </h2>
+                      </div>
+                      {{ product.description }}
                     </div>
-                    <div class="content-right">
-                        <img src="{{ product.featured_image | image_url: width: 1100, height: 861 }}" alt="THP Logo" width="1100" height="861" /> 
-                    </div>
+                    <div class="product-button"><span>Buy now {{ product.price | money }}</span></div>
+                  </div>
+                  <div class="content-right">
+                    <img src="{{ product.featured_image | image_url: width: 1100, height: 861 }}" alt="{{ product.title }}" width="1100" height="861" />
+                  </div>
                 </div>
-            </div>
-            
-          {% endfor %}
+              </div>
+            {% endfor %}
           
         </div>
         <div class="swiper-hero-buttons">
@@ -52,3 +55,16 @@
   </div>
 </div>
 <script src="{{ 'swiper.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Hero Section with Swiper",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "selected_collection",
+      "label": "Select collection"
+    }
+  ]
+}
+{% endschema %}

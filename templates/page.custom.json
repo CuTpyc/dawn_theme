@@ -13,6 +13,7 @@
     "main": {
       "type": "page-custom",
       "settings": {
+        "selected_collection": "protein"
       }
     }
   },
