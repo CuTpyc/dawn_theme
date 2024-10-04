@@ -1,0 +1,89 @@
+button:active, button:focus {
+    outline: none;
+    }
+.collections-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 1410px;
+    margin: 0 auto;
+}
+
+.collections-tabs {
+    display: flex;
+    gap: 50px;
+}
+
+.collection-tab {
+    height: 60px;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 60px;
+    color: #808080;
+    cursor: pointer;
+    border: none;
+    background: none;
+    display: flex;
+    position: relative;
+}
+
+.collection-tab span{
+    font-size: 12px;
+    display: flex;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+}
+
+.active-collection-tab{
+    color: black;
+}
+
+.collection-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+.collection-content > p{
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    color: #808080;
+}
+
+.swiper-landing {
+    width: 100%;
+
+}
+
+.swiper-landing .swiper-wrapper {
+    display: flex;
+    width: 100%;
+}
+
+.swiper-landing .swiper-slide {
+    max-width: 450px;
+}
+
+.swiper-landing .product-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.swiper-landing .product-card img {
+}
+
+.swiper-landing .product-card h3 {
+}
+
+.swiper-landing .product-card p {
+}
+
+.swiper-landing .swiper-button-next {
+}
+
+.swiper-landing .swiper-button-prev {
+}

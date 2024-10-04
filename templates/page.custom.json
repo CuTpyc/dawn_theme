@@ -15,9 +15,51 @@
       "settings": {
         "selected_collection": "protein"
       }
+    },
+    "landing_swiper_qXQJat": {
+      "type": "landing-swiper",
+      "blocks": {
+        "collection_fidJJ9": {
+          "type": "collection",
+          "settings": {
+            "collection_handle": "protein",
+            "collection_name": "Protein"
+          }
+        },
+        "collection_zxagWJ": {
+          "type": "collection",
+          "settings": {
+            "collection_handle": "basses",
+            "collection_name": "Basses"
+          }
+        },
+        "collection_FjryDW": {
+          "type": "collection",
+          "settings": {
+            "collection_handle": "guitars",
+            "collection_name": "Guitars"
+          }
+        },
+        "collection_fDkFHC": {
+          "type": "collection",
+          "settings": {
+            "collection_handle": "drums",
+            "collection_name": "Drums"
+          }
+        }
+      },
+      "block_order": [
+        "collection_fidJJ9",
+        "collection_zxagWJ",
+        "collection_FjryDW",
+        "collection_fDkFHC"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "landing_swiper_qXQJat"
   ]
 }

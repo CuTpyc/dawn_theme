@@ -1,0 +1,98 @@
+<link rel="stylesheet" href="{{ 'landing-swiper.css' | asset_url }}">
+
+<div class="collections-section">
+    <div class="collections-tabs">
+      {% for block in section.blocks %}
+        <button class="collection-tab" data-collection="{{ block.settings.collection_handle }}">
+          {{ block.settings.collection_name }}<span>{{ collections[block.settings.collection_handle].products_count }}</span>
+        </button>
+      {% endfor %}
+    </div>
+  
+    {% for block in section.blocks %}
+      <div class="collection-content" id="{{ block.settings.collection_handle }}" style="{% if forloop.first == false %}display:none{% endif %}">
+        {{ collections[block.settings.collection_handle].description }}
+  
+        <div class="swiper swiper-landing">
+          <div class="swiper-wrapper">
+            {% for product in collections[block.settings.collection_handle].products %}
+              <div class="swiper-slide">
+                <div class="product-card">
+                  <img src="{{ product.featured_image | image_url: width: 300, height: 300}}" width="300" height="300" alt="{{ product.title }}">
+                  <h3>{{ product.title }}</h3>
+                  <p>{{ product.variants.first.weight }} {{ product.variants.first.weight_unit }}</p>
+                  <p>{{ product.price | money }}</p>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+  
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+<script>
+  const tabs = document.querySelectorAll('.collection-tab');
+  const collections = document.querySelectorAll('.collection-content');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active-collection-tab'));
+      
+      collections.forEach(collection => {
+        collection.style.display = 'none';
+      });
+  
+      tab.classList.add('active-collection-tab');
+  
+      const targetCollection = document.getElementById(tab.getAttribute('data-collection'));
+      targetCollection.style.display = 'block';
+    });
+  });
+
+  const swipers = document.querySelectorAll('.swiper-landing}}');
+  swipers.forEach(swiperContainer => {
+    new Swiper(swiperContainer, {
+      slidesPerView: 4,
+      spaceBetween: 30,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Collections Slider",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection_handle",
+          "label": "Select Collection"
+        },
+        {
+          "type": "text",
+          "id": "collection_name",
+          "label": "Collection Display Name"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collections Slider",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
