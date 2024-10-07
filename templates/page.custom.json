@@ -55,6 +55,8 @@
         "collection_fDkFHC"
       ],
       "settings": {
+        "show_count": true,
+        "default_collection": "protein"
       }
     }
   },

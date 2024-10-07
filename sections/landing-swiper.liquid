@@ -1,75 +1,106 @@
 <link rel="stylesheet" href="{{ 'landing-swiper.css' | asset_url }}">
 
 <div class="collections-section">
-    <div class="collections-tabs">
+  <div class="collections-tabs">
       {% for block in section.blocks %}
-        <button class="collection-tab" data-collection="{{ block.settings.collection_handle }}">
-          {{ block.settings.collection_name }}<span>{{ collections[block.settings.collection_handle].products_count }}</span>
-        </button>
+      <button class="collection-tab {% if block.settings.collection_handle == section.settings.default_collection %} active-collection-tab {% endif %}" data-collection="{{ block.settings.collection_handle }}">
+          {{ block.settings.collection_name }}
+          {% if section.settings.show_count %}
+            <span>{{ collections[block.settings.collection_handle].products_count }}</span>
+          {% endif %}
+      </button>
       {% endfor %}
-    </div>
-  
-    {% for block in section.blocks %}
-      <div class="collection-content" id="{{ block.settings.collection_handle }}" style="{% if forloop.first == false %}display:none{% endif %}">
-        {{ collections[block.settings.collection_handle].description }}
-  
-        <div class="swiper swiper-landing">
-          <div class="swiper-wrapper">
-            {% for product in collections[block.settings.collection_handle].products %}
-              <div class="swiper-slide">
-                <div class="product-card">
-                  <img src="{{ product.featured_image | image_url: width: 300, height: 300}}" width="300" height="300" alt="{{ product.title }}">
-                  <h3>{{ product.title }}</h3>
-                  <p>{{ product.variants.first.weight }} {{ product.variants.first.weight_unit }}</p>
-                  <p>{{ product.price | money }}</p>
-                </div>
-              </div>
-            {% endfor %}
-          </div>
-  
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-        </div>
-      </div>
-    {% endfor %}
   </div>
 
+  <!-- Only one description block -->
+  <div class="active-collection-description">
+      <p id="collection-description"></p>
+  </div>
+
+  {% for block in section.blocks %}
+  <div class="collection-content" id="{{ block.settings.collection_handle }}" data-description="{{ collections[block.settings.collection_handle].description }}" style="{% if block.settings.collection_handle == section.settings.default_collection %}display:block{% else %}display:none{% endif %}">
+      <div class="swiper-container swiper-{{ block.settings.collection_handle }}">
+          <div class="swiper-collections swiper-wrapper">
+              {% for product in collections[block.settings.collection_handle].products %}
+              <div class="swiper-slide swiper-collections">
+                  <div class="swiper-collections product-card">
+                      <img src="{{ product.featured_image | image_url: width: 300, height: 300 }}" alt="{{ product.title }}" width="300" height="300">
+                      <h3>{{ product.title }}</h3>
+                      <p>{{ product.variants.first.weight }} {{ product.variants.first.weight_unit }}</p>
+                      <p>{{ product.price | money }}</p>
+                  </div>
+              </div>
+              {% endfor %}
+          </div>
+          <div class="swiper-button-next swiper-button-next-{{ block.settings.collection_handle }}"></div>
+          <div class="swiper-button-prev swiper-button-prev-{{ block.settings.collection_handle }}"></div>
+      </div>
+  </div>
+  {% endfor %}
+</div>
+
 <script>
-  const tabs = document.querySelectorAll('.collection-tab');
-  const collections = document.querySelectorAll('.collection-content');
+  document.addEventListener('DOMContentLoaded', function() {
+    const tabs = document.querySelectorAll('.collection-tab');
+    const collections = document.querySelectorAll('.collection-content');
+    const descriptionElement = document.getElementById('collection-description');
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active-collection-tab'));
-      
-      collections.forEach(collection => {
-        collection.style.display = 'none';
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active-collection-tab'));
+        collections.forEach(collection => collection.style.display = 'none');
+
+        tab.classList.add('active-collection-tab');
+        const targetCollection = document.getElementById(tab.getAttribute('data-collection'));
+        targetCollection.style.display = 'block';
+
+        // Update description for the active collection
+        const collectionDescription = targetCollection.getAttribute('data-description');
+        descriptionElement.innerHTML = collectionDescription ? collectionDescription : '';
+
+        const swiperInstance = new Swiper(`.swiper-${tab.getAttribute('data-collection')}`, {
+          slidesPerView: 5,
+          spaceBetween: 30,
+          speed: 1000,
+          loop: true,
+          navigation: {
+            nextEl: `.swiper-button-next-${tab.getAttribute('data-collection')}`,
+            prevEl: `.swiper-button-prev-${tab.getAttribute('data-collection')}`
+          },
+          autoplay: {
+            delay: 3000
+          }
+        });
+
+        swiperInstance.update();
       });
-  
-      tab.classList.add('active-collection-tab');
-  
-      const targetCollection = document.getElementById(tab.getAttribute('data-collection'));
-      targetCollection.style.display = 'block';
     });
-  });
 
-  const swipers = document.querySelectorAll('.swiper-landing}}');
-  swipers.forEach(swiperContainer => {
-    new Swiper(swiperContainer, {
-      slidesPerView: 4,
-      spaceBetween: 30,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
+    // Initialize description for the default collection
+    const defaultCollection = document.getElementById('{{ section.settings.default_collection }}');
+    if (defaultCollection) {
+      const defaultDescription = defaultCollection.getAttribute('data-description');
+      descriptionElement.innerHTML = defaultDescription ? defaultDescription : '';
+    }
   });
 </script>
 
 {% schema %}
 {
   "name": "Collections Slider",
-  "settings": [],
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_count",
+      "label": "Show Product Count",
+      "default": true
+    },
+    {
+      "type": "collection",
+      "id": "default_collection",
+      "label": "Select Default Collection"
+    }
+  ],
   "blocks": [
     {
       "type": "collection",

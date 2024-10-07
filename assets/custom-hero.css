@@ -4,16 +4,16 @@
  padding: 60px 20px;
 }
   
-  .swiper-hero{
+  .swiper {
     width: 100%;
     position: relative;
   }
   
-  .swiper-hero .swiper-wrapper {
+  .swiper-wrapper {
     width: 100%;
   }
   
-  .swiper-hero .swiper-slide {
+  .swiper-slide {
     display: flex;
     
    }
@@ -96,8 +96,8 @@
       
     }
 
-    .swiper-hero .swiper-button-next, 
-    .swiper-hero .swiper-button-prev{
+    .swiper-button-next, 
+    .swiper-button-prev{
       position: absolute;
       text-align: center;
       width: 60px;
@@ -111,22 +111,22 @@
       right: 0;
     }
 
-    .swiper-hero .swiper-button-next > div, 
-    .swiper-hero .swiper-button-prev > div{
+    .swiper-button-next > div, 
+    .swiper-button-prev > div{
       color: #42ABDE;
       width: 60px;
       height: 60px;
     }
 
-    .swiper-hero .swiper-button-next::after {
+    .swiper-button-next::after {
       content: '';
     }
 
-    .swiper-hero .swiper-button-prev::after {
+    .swiper-button-prev::after {
       content: '';
     }
 
-    .swiper-hero .autoplay-progress {
+    .autoplay-progress {
       position: absolute;
       
       z-index: 10;
@@ -139,7 +139,7 @@
       color: #42ABDE;
     }
 
-    .swiper-hero .autoplay-progress svg {
+    .autoplay-progress svg {
       --progress: 0;
       position: absolute;
       left: -3px;
@@ -167,24 +167,24 @@
   }
   
   @media (max-width: 1366px) {
-    .swiper-hero .content-right {
+    .content-right {
       max-width: 800px;
       max-height: 626px;
       }
-      .swiper-hero .swiper-hero-buttons{
+    .swiper-hero-buttons{
       bottom: 75px;
     }
-    .swiper-hero .content-left {
+    .content-left {
       
       padding-bottom: 50px;
     }
-    .swiper-hero .product-button{
+    .product-button{
       max-width: 100%;
     }
   }
 
   @media (max-width: 768px) {
-    .swiper-hero .product-card{ 
+    .product-card{ 
       display: flex;
       flex-direction: column-reverse;
       
@@ -197,15 +197,15 @@
       margin: 0 auto;
      }
 
-     .swiper-hero .swiper-hero-buttons{
+     .swiper-hero-buttons{
       bottom: 83px;
     }
-    .swiper-hero .swiper-hero-buttons{
+    .swiper-hero-buttons{
       
       right: 18.5%;
       
     }
-    .swiper-hero .product-button{
+    .product-button{
       
       width: 50%;
     }
