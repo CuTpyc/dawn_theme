@@ -23,10 +23,17 @@
               {% for product in collections[block.settings.collection_handle].products %}
               <div class="swiper-slide swiper-collections">
                   <div class="swiper-collections product-card">
-                      <img src="{{ product.featured_image | image_url: width: 300, height: 300 }}" alt="{{ product.title }}" width="300" height="300">
-                      <h3>{{ product.title }}</h3>
-                      <p>{{ product.variants.first.weight }} {{ product.variants.first.weight_unit }}</p>
-                      <p>{{ product.price | money }}</p>
+                      <div class="product-card-img">
+                        <img src="{{ product.featured_image | image_url: width: 300, height: 300 }}" alt="{{ product.title }}" width="300" height="300">
+                      </div>  
+                      <div class="product-card-text">
+                        <h3>{{ product.title }}</h3>
+                        <p>{{ product.variants.first.weight }} {{ product.variants.first.weight_unit }}</p>
+                        <div class="product-card-price">
+                          <p>{{ product.price | money }}</p>
+                        </div>
+                      </div>
+                      
                   </div>
               </div>
               {% endfor %}
@@ -44,42 +51,50 @@
     const collections = document.querySelectorAll('.collection-content');
     const descriptionElement = document.getElementById('collection-description');
 
+    function initializeSwiper(tab) {
+      const collectionHandle = tab.getAttribute('data-collection');
+      return new Swiper(`.swiper-${collectionHandle}`, {
+        slidesPerView: 5,
+        spaceBetween: 8,
+        centeredSlides: true,
+        speed: 1000,
+        loop: true,
+        navigation: {
+          nextEl: `.swiper-button-next-${collectionHandle}`,
+          prevEl: `.swiper-button-prev-${collectionHandle}`
+        },
+        autoplay: {
+          delay: 3000
+        }
+      });
+    }
+
+    function switchCollection(tab) {
+      tabs.forEach(t => t.classList.remove('active-collection-tab'));
+      collections.forEach(collection => collection.style.display = 'none');
+
+      tab.classList.add('active-collection-tab');
+      const targetCollection = document.getElementById(tab.getAttribute('data-collection'));
+      targetCollection.style.display = 'block';
+
+      const collectionDescription = targetCollection.getAttribute('data-description');
+      descriptionElement.innerHTML = collectionDescription ? collectionDescription : '';
+
+      const swiperInstance = initializeSwiper(tab);
+      swiperInstance.update();
+    }
+
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active-collection-tab'));
-        collections.forEach(collection => collection.style.display = 'none');
-
-        tab.classList.add('active-collection-tab');
-        const targetCollection = document.getElementById(tab.getAttribute('data-collection'));
-        targetCollection.style.display = 'block';
-
-        // Update description for the active collection
-        const collectionDescription = targetCollection.getAttribute('data-description');
-        descriptionElement.innerHTML = collectionDescription ? collectionDescription : '';
-
-        const swiperInstance = new Swiper(`.swiper-${tab.getAttribute('data-collection')}`, {
-          slidesPerView: 5,
-          spaceBetween: 30,
-          speed: 1000,
-          loop: true,
-          navigation: {
-            nextEl: `.swiper-button-next-${tab.getAttribute('data-collection')}`,
-            prevEl: `.swiper-button-prev-${tab.getAttribute('data-collection')}`
-          },
-          autoplay: {
-            delay: 3000
-          }
-        });
-
-        swiperInstance.update();
+        switchCollection(tab);
       });
     });
 
-    // Initialize description for the default collection
     const defaultCollection = document.getElementById('{{ section.settings.default_collection }}');
     if (defaultCollection) {
       const defaultDescription = defaultCollection.getAttribute('data-description');
       descriptionElement.innerHTML = defaultDescription ? defaultDescription : '';
+      switchCollection(tabs[0]); 
     }
   });
 </script>

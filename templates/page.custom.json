@@ -46,13 +46,29 @@
             "collection_handle": "drums",
             "collection_name": "Drums"
           }
+        },
+        "collection_hdhpGj": {
+          "type": "collection",
+          "settings": {
+            "collection_handle": "protein",
+            "collection_name": "Protein2"
+          }
+        },
+        "collection_yiJnBj": {
+          "type": "collection",
+          "settings": {
+            "collection_handle": "protein",
+            "collection_name": "Protein3"
+          }
         }
       },
       "block_order": [
         "collection_fidJJ9",
         "collection_zxagWJ",
         "collection_FjryDW",
-        "collection_fDkFHC"
+        "collection_fDkFHC",
+        "collection_hdhpGj",
+        "collection_yiJnBj"
       ],
       "settings": {
         "show_count": true,
