@@ -12,6 +12,24 @@
   "sections": {
     "main": {
       "type": "page-custom",
+      "blocks": {
+        "text_line_top_LNNREU": {
+          "type": "text_line_top",
+          "settings": {
+            "top_text": "THE HEALTH"
+          }
+        },
+        "text_line_bottom_dgUVjt": {
+          "type": "text_line_bottom",
+          "settings": {
+            "bottom_text": "PROJECT"
+          }
+        }
+      },
+      "block_order": [
+        "text_line_top_LNNREU",
+        "text_line_bottom_dgUVjt"
+      ],
       "settings": {
         "selected_collection": "protein"
       }

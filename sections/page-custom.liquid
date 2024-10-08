@@ -1,59 +1,76 @@
 <link rel="stylesheet" href="{{ 'custom-hero.css' | asset_url }}">
 <div class="hero-section">
-    
-  <div class="swiper swiper-hero">
-        <div class="swiper-wrapper">
-
-            {% assign collection_handle = section.settings.selected_collection %}
-
-            {% if collection_handle != blank %}
-              {% assign collection = collections[collection_handle] %}
-            {% else %}
-              {% assign collection = collections['all'] %}
-            {% endif %}
-            
-            {% for product in collection.products %}
-              <div class="swiper-slide">
-                <div class="product-card">
-                  <div class="content-left">
-                    <div class="product-text">
-                      <div class="product-title">
-                        <h2 class="text">
-                          {{ product.title }}
-                          {% for variant in product.variants %}
-                            {{ variant.weight }}{{ variant.weight_unit }}
-                          {% endfor %}
-                        </h2>
-                      </div>
-                      {{ product.description }}
-                    </div>
-                    <div class="product-button"><span>Buy now {{ product.price | money }}</span></div>
-                  </div>
-                  <div class="content-right">
-                    <img src="{{ product.featured_image | image_url: width: 1100, height: 861 }}" alt="{{ product.title }}" width="1100" height="861" />
-                  </div>
-                </div>
-              </div>
+        <div class="hero-background">
+          <div class="hero-background__text hero-background__text--top">
+            {% for block in section.blocks %}
+              {% if block.type == 'text_line_top' and block.settings.top_text != blank %}
+                {% for i in (1..20) %} <!-- Динамическое количество повторений -->
+                  <span>{{ block.settings.top_text }}</span>
+                {% endfor %}
+              {% endif %}
             {% endfor %}
-          
+          </div>
+          <div class="hero-background__text hero-background__text--bottom">
+            {% for block in section.blocks %}
+              {% if block.type == 'text_line_bottom' and block.settings.bottom_text != blank %}
+                {% for i in (1..20) %} <!-- Динамическое количество повторений -->
+                  <span>{{ block.settings.bottom_text }}</span>
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+          </div>
         </div>
-        <div class="swiper-hero-buttons">
-            <div class="swiper-button-next"><div>←</div></div>
-            <div class="swiper-button-prev">
-                <div>→</div>
-                <div class="autoplay-progress">
-                    <svg viewBox="0 0 48 48">
-                    <circle cx="24" cy="24" r="20"></circle>
-                    </svg>
-                    <span></span>
+  <div class="swiper swiper-hero">
+    <div class="swiper-wrapper">
+
+      {% assign collection_handle = section.settings.selected_collection %}
+
+      {% if collection_handle != blank %}
+        {% assign collection = collections[collection_handle] %}
+      {% else %}
+        {% assign collection = collections['all'] %}
+      {% endif %}
+      
+      {% for product in collection.products %}
+        <div class="swiper-slide">
+          <div class="product-card">
+            <div class="content-left">
+              <div class="product-text">
+                <div class="product-title">
+                  <h2 class="text">
+                    {{ product.title }}
+                    {% for variant in product.variants %}
+                      {{ variant.weight }}{{ variant.weight_unit }}
+                    {% endfor %}
+                  </h2>
                 </div>
+                {{ product.description }}
+              </div>
+              <div class="product-button"><span>Buy now {{ product.price | money }}</span></div>
             </div>
+            <div class="content-right">
+              <img src="{{ product.featured_image | image_url: width: 1100, height: 861 }}" alt="{{ product.title }}" width="1100" height="861" />
+            </div>
+          </div>
         </div>
-        
-        
-        
+      {% endfor %}
+    
+    </div>
+    <div class="swiper-hero-buttons">
+      <div class="swiper-button-next"><div>←</div></div>
+      <div class="swiper-button-prev">
+        <div>→</div>
+        <div class="autoplay-progress">
+          <svg viewBox="0 0 48 48">
+          <circle cx="24" cy="24" r="20"></circle>
+          </svg>
+          <span></span>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
 <script src="{{ 'swiper.js' | asset_url }}" defer></script>
 
 {% schema %}
@@ -64,6 +81,33 @@
       "type": "collection",
       "id": "selected_collection",
       "label": "Select collection"
+    },
+    
+  ],
+  "blocks": [
+    {
+      "type": "text_line_top",
+      "name": "Top Background Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "top_text",
+          "label": "Top Line Text",
+          "default": "THE HEALTH"
+        }
+      ]
+    },
+    {
+      "type": "text_line_bottom",
+      "name": "Bottom Background Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "bottom_text",
+          "label": "Bottom Line Text",
+          "default": "PROJECT"
+        }
+      ]
     }
   ]
 }
