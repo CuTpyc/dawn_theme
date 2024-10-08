@@ -60,6 +60,13 @@
             "collection_handle": "protein",
             "collection_name": "Protein3"
           }
+        },
+        "collection_GHxRnP": {
+          "type": "collection",
+          "settings": {
+            "collection_handle": "geiners",
+            "collection_name": "Geiners"
+          }
         }
       },
       "block_order": [
@@ -68,16 +75,71 @@
         "collection_FjryDW",
         "collection_fDkFHC",
         "collection_hdhpGj",
-        "collection_yiJnBj"
+        "collection_yiJnBj",
+        "collection_GHxRnP"
       ],
       "settings": {
         "show_count": true,
         "default_collection": "protein"
       }
+    },
+    "top_sellers_BCec3T": {
+      "type": "top-sellers",
+      "blocks": {
+        "product_qW3Mbp": {
+          "type": "product",
+          "settings": {
+            "product": "creatine-monohydrate",
+            "background_color": "#42abde",
+            "text_color": "#42abde",
+            "opacity": 0.1
+          }
+        },
+        "product_jdNACf": {
+          "type": "product",
+          "settings": {
+            "product": "mass-gainer",
+            "background_color": "#e35f5e",
+            "text_color": "#e35f5e",
+            "opacity": 0.1
+          }
+        },
+        "product_PFkjRx": {
+          "type": "product",
+          "settings": {
+            "product": "plant-protein",
+            "background_color": "#5bb984",
+            "text_color": "#5bb984",
+            "opacity": 0.1
+          }
+        },
+        "product_ix8UeB": {
+          "type": "product",
+          "settings": {
+            "product": "whey-protein",
+            "background_color": "#42abde",
+            "text_color": "#42abde",
+            "opacity": 0.1
+          }
+        }
+      },
+      "block_order": [
+        "product_qW3Mbp",
+        "product_jdNACf",
+        "product_PFkjRx",
+        "product_ix8UeB"
+      ],
+      "settings": {
+        "main_title": "Discover our top sellers",
+        "main_subtitle": "Lower your daily calorie intake and boost your metabolism with our best products.",
+        "section_background_color": "#ffffff",
+        "title_alignment": "center"
+      }
     }
   },
   "order": [
     "main",
-    "landing_swiper_qXQJat"
+    "landing_swiper_qXQJat",
+    "top_sellers_BCec3T"
   ]
 }

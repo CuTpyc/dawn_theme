@@ -1,0 +1,123 @@
+<link rel="stylesheet" href="{{ 'top-sellers.css' | asset_url }}">
+
+<div class="top-sellers-section" style="background-color: {{ section.settings.section_background_color }}">
+  <div class="title-container" style="text-align: {{ section.settings.title_alignment }};">
+    <h2>{{ section.settings.main_title }}</h2>
+    <p class="main-subtitle">{{ section.settings.main_subtitle }}</p>
+  </div>
+  <div class="top-sellers-grid">
+    {% for block in section.blocks %}
+      {% if block.settings.product != blank %}
+        {% assign product = all_products[block.settings.product] %}
+        <div class="top-seller-card" style="background-color: {{ block.settings.background_color | hex_to_rgba: block.settings.opacity }}; color: {{ block.settings.text_color }};">
+          
+          <!-- Ссылка на продукт -->
+          <a href="{{ product.url }}" class="product-link" target="_blank">
+            <img src="{{ 'arrow-icon.svg' | asset_url }}" alt="View Product">
+          </a>
+          
+          <div class="top-seller-image">
+            <img src="{{ product.featured_image | img_url: '480x480' }}" alt="{{ product.title }}">
+          </div>
+          <h3>{{ product.title }}</h3>
+          <p>{{ product.description | strip_html | truncate: 150 }}</p>
+          <p class="product-price">{{ product.price | money }}</p>
+        </div>
+      {% else %}
+        <div class="top-seller-card" style="background-color: {{ block.settings.background_color | hex_to_rgba: block.settings.opacity }}; color: {{ block.settings.text_color }};">
+          <div class="top-seller-image">
+            <img src="{{ block.settings.image | img_url: '480x480' }}" alt="{{ block.settings.title }}">
+          </div>
+          <h3>{{ block.settings.title }}</h3>
+          <p>{{ block.settings.description }}</p>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Top Sellers",
+  "settings": [
+    {
+      "type": "text",
+      "id": "main_title",
+      "label": "Main Title",
+      "default": "Discover our top sellers"
+    },
+    {
+      "type": "textarea",
+      "id": "main_subtitle",
+      "label": "Main Subtitle",
+      "default": "Lower your daily calorie intake and boost your metabolism with our best products."
+    },
+    {
+      "type": "color",
+      "id": "section_background_color",
+      "label": "Section Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "label": "Title Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Select Product"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Card Background Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#000000"
+        },
+        {
+          "type": "range",
+          "id": "opacity",
+          "label": "Background Opacity",
+          "default": 1,
+          "min": 0,
+          "max": 1,
+          "step": 0.1
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Top Sellers",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

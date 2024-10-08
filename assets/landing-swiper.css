@@ -53,10 +53,7 @@
   }
   
    .swiper-collections .swiper-container {
-    overflow: visible;
-    display: flex;
-    justify-content: center;
-    
+    overflow: visible; 
   }
   .swiper-collections .swiper-wrapper {
     display: flex;
@@ -64,9 +61,9 @@
   }
   
   .swiper-collections .swiper-slide {
-    max-width: 450px;
+    width: 450px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
+    
   }
    
   .swiper-collections .product-card {
