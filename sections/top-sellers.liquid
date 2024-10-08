@@ -10,23 +10,25 @@
       {% if block.settings.product != blank %}
         {% assign product = all_products[block.settings.product] %}
         <div class="top-seller-card" style="background-color: {{ block.settings.background_color | hex_to_rgba: block.settings.opacity }}; color: {{ block.settings.text_color }};">
-          
-          <!-- Ссылка на продукт -->
-          <a href="{{ product.url }}" class="product-link" target="_blank">
-            <img src="{{ 'arrow-icon.svg' | asset_url }}" alt="View Product">
-          </a>
-          
-          <div class="top-seller-image">
-            <img src="{{ product.featured_image | img_url: '480x480' }}" alt="{{ product.title }}">
+          <div class="top-seller-text">
+            <div class="top-seller-title">
+              <h3>{{ product.title }}</h3>
+              <a href="{{ product.url }}" class="product-link" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="{{ block.settings.text_color }}"   width="25" height="25"><path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"/></svg>
+              </a>
+            </div>
+            <div class="top-seller-description">
+              <p>{{ product.description | strip_html }}</p>
+            </div>
           </div>
-          <h3>{{ product.title }}</h3>
-          <p>{{ product.description | strip_html | truncate: 150 }}</p>
-          <p class="product-price">{{ product.price | money }}</p>
+          <div class="top-seller-image">
+            <img src="{{ product.featured_image | image_url: width: 570, height: 570 }}" alt="{{ product.title }}" width="570" height="570">
+          </div>
         </div>
       {% else %}
         <div class="top-seller-card" style="background-color: {{ block.settings.background_color | hex_to_rgba: block.settings.opacity }}; color: {{ block.settings.text_color }};">
           <div class="top-seller-image">
-            <img src="{{ block.settings.image | img_url: '480x480' }}" alt="{{ block.settings.title }}">
+            <img src="{{ block.settings.image | image_url: width: 300, height: 300 }}" alt="{{ block.settings.title }}" width="480" height="480">
           </div>
           <h3>{{ block.settings.title }}</h3>
           <p>{{ block.settings.description }}</p>
@@ -35,6 +37,8 @@
     {% endfor %}
   </div>
 </div>
+
+
 
 {% schema %}
 {
