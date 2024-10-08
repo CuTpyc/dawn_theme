@@ -4,7 +4,7 @@
           <div class="hero-background__text hero-background__text--top">
             {% for block in section.blocks %}
               {% if block.type == 'text_line_top' and block.settings.top_text != blank %}
-                {% for i in (1..20) %} <!-- Динамическое количество повторений -->
+                {% for i in (1..20) %} 
                   <span>{{ block.settings.top_text }}</span>
                 {% endfor %}
               {% endif %}
@@ -13,7 +13,7 @@
           <div class="hero-background__text hero-background__text--bottom">
             {% for block in section.blocks %}
               {% if block.type == 'text_line_bottom' and block.settings.bottom_text != blank %}
-                {% for i in (1..20) %} <!-- Динамическое количество повторений -->
+                {% for i in (1..20) %} 
                   <span>{{ block.settings.bottom_text }}</span>
                 {% endfor %}
               {% endif %}
