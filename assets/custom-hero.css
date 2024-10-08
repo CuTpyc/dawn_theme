@@ -4,6 +4,7 @@
  padding: 60px 20px;
  background-size: cover;
  background-position: center;
+ overflow: hidden;
 }
 .hero-background__text {
   position: absolute;

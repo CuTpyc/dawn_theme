@@ -21,20 +21,19 @@
       <div class="swiper-container swiper-{{ block.settings.collection_handle }}">
           <div class="swiper-collections swiper-wrapper">
               {% for product in collections[block.settings.collection_handle].products %}
-              <div class="swiper-slide swiper-collections">
-                  <div class="swiper-collections product-card">
-                      <div class="product-card-img">
-                        <img src="{{ product.featured_image | image_url: width: 300, height: 300 }}" alt="{{ product.title }}" width="300" height="300">
-                      </div>  
-                      <div class="product-card-text">
-                        <h3>{{ product.title }}</h3>
-                        <p>{{ product.variants.first.weight }} {{ product.variants.first.weight_unit }}</p>
-                        <div class="product-card-price">
-                          <p>{{ product.price | money }}</p>
-                        </div>
-                      </div>
-                      
+              <div class="swiper-slide swiper-collections collections-product-card">
+                  
+                  <div class="collections-product-card-img">
+                    <img src="{{ product.featured_image | image_url: width: 300, height: 300 }}" alt="{{ product.title }}" width="300" height="300">
+                  </div>  
+                  <div class="collections-product-card-text">
+                    <h3>{{ product.title | strip_html  }}</h3>
+                    <p>{{ product.variants.first.weight | strip_html }} {{ product.variants.first.weight_unit }}</p>
+                    <div class="collections-product-card-price">
+                      <p>{{ product.price | strip_html  | money }}</p>
+                    </div>
                   </div>
+                    
               </div>
               {% endfor %}
           </div>
