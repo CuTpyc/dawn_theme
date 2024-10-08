@@ -16,6 +16,20 @@
   line-height: 60px;
 }
 
+.top-seller-swiper-container{
+  width: 100%;
+  height: auto; 
+  overflow: hidden;
+}
+
+.top-seller-swiper-container .swiper-slide {
+  display: flex;
+  height: auto; 
+}
+
+.top-seller-swiper-container .top-seller-card {
+}
+
 .main-subtitle {
   color: #808080;
   font-weight: 400;
@@ -23,7 +37,7 @@
   line-height: 24px;
 }
 
-.top-sellers-grid {
+.top-sellers-grid-swiper-wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
@@ -101,6 +115,10 @@
     font-weight: 600;
     font-size: 24px;
     line-height: 36px;
+  }
+
+  .top-sellers-grid-swiper-wrapper {
+    display: flex;
   }
 }
 
