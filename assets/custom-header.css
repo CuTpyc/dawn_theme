@@ -99,6 +99,7 @@ header {
   opacity: 0;
   transform: translateY(-100%);
   transition: all 0.3s ease;
+  z-index: 1000;
 }
 
 .mobile-menu-links {

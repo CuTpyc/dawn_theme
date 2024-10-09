@@ -1,11 +1,18 @@
+
+
 .hero-section {
  width: 100%;
  display: flex;
  padding: 60px 20px;
  background-size: cover;
  background-position: center;
- overflow: hidden;
+ 
 }
+
+.hero-background {
+  max-width: 1920px;
+}
+
 .hero-background__text {
   position: absolute;
   display: flex;
@@ -26,13 +33,13 @@
 }
 
 .hero-background__text--top {
-  top: 0;
+  top: -150px;
   left: 0;
   animation: moveRight 60s linear infinite; 
 }
 
 .hero-background__text--bottom {
-  top: 15%;
+  top: 0;
   left: 0; 
   animation: moveLeft 60s linear infinite;
 }
@@ -266,5 +273,13 @@
     }
     .content-left {
       width: 100%;
+    }
+  }
+
+  @media (max-width: 500) {
+    .swiper-hero-buttons{
+      
+      right: 24%;
+      
     }
   }

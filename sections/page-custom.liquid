@@ -1,26 +1,27 @@
 <link rel="stylesheet" href="{{ 'custom-hero.css' | asset_url }}">
 <div class="hero-section">
-        <div class="hero-background">
-          <div class="hero-background__text hero-background__text--top">
-            {% for block in section.blocks %}
-              {% if block.type == 'text_line_top' and block.settings.top_text != blank %}
-                {% for i in (1..20) %} 
-                  <span>{{ block.settings.top_text }}</span>
-                {% endfor %}
-              {% endif %}
-            {% endfor %}
-          </div>
-          <div class="hero-background__text hero-background__text--bottom">
-            {% for block in section.blocks %}
-              {% if block.type == 'text_line_bottom' and block.settings.bottom_text != blank %}
-                {% for i in (1..20) %} 
-                  <span>{{ block.settings.bottom_text }}</span>
-                {% endfor %}
-              {% endif %}
-            {% endfor %}
-          </div>
-        </div>
+        
   <div class="swiper swiper-hero">
+    <div class="hero-background">
+      <div class="hero-background__text hero-background__text--top">
+        {% for block in section.blocks %}
+          {% if block.type == 'text_line_top' and block.settings.top_text != blank %}
+            {% for i in (1..20) %} 
+              <span>{{ block.settings.top_text }}</span>
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="hero-background__text hero-background__text--bottom">
+        {% for block in section.blocks %}
+          {% if block.type == 'text_line_bottom' and block.settings.bottom_text != blank %}
+            {% for i in (1..20) %} 
+              <span>{{ block.settings.bottom_text }}</span>
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
     <div class="swiper-wrapper">
 
       {% assign collection_handle = section.settings.selected_collection %}
