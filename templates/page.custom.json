@@ -154,39 +154,41 @@
         "title_alignment": "center"
       }
     },
-    "horizontal_slider_ztRPVq": {
-      "type": "horizontal-slider",
+    "product_show_MRQyY6": {
+      "type": "product-show",
       "blocks": {
-        "product_DHrJ7W": {
-          "type": "product",
+        "content_9gGRbm": {
+          "type": "content",
           "settings": {
-            "product": "whey-protein"
+            "product": "whey-protein",
+            "custom_image": "shopify://shop_images/THP.png",
+            "layout": "image-center",
+            "title_first": true
           }
         },
-        "product_7Fggiy": {
-          "type": "product",
+        "content_8tHnqP": {
+          "type": "content",
           "settings": {
-            "product": "creatine-monohydrate"
+            "product": "plant-protein",
+            "custom_image": "shopify://shop_images/THP_1.png",
+            "layout": "image-center",
+            "title_first": true
           }
         },
-        "product_nJfh3U": {
-          "type": "product",
+        "content_hCGkgp": {
+          "type": "content",
           "settings": {
-            "product": "mass-gainer"
-          }
-        },
-        "product_KmNMAL": {
-          "type": "product",
-          "settings": {
-            "product": "plant-protein"
+            "product": "creatine-monohydrate",
+            "custom_image": "shopify://shop_images/THP_2.png",
+            "layout": "image-center",
+            "title_first": true
           }
         }
       },
       "block_order": [
-        "product_DHrJ7W",
-        "product_7Fggiy",
-        "product_nJfh3U",
-        "product_KmNMAL"
+        "content_9gGRbm",
+        "content_8tHnqP",
+        "content_hCGkgp"
       ],
       "settings": {
       }
@@ -196,6 +198,6 @@
     "main",
     "landing_swiper_qXQJat",
     "top_sellers_BCec3T",
-    "horizontal_slider_ztRPVq"
+    "product_show_MRQyY6"
   ]
 }

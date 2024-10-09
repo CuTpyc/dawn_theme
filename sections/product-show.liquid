@@ -1,0 +1,197 @@
+<link rel="stylesheet" href="{{ 'product-show.css' | asset_url }}">
+<div class="custom-section">
+  <hr class="divider">
+  <div class="custom-wrapper">
+    {% for block in section.blocks %}
+      
+      <div class="custom-block">
+        {% case block.settings.layout %}
+          {% when 'image-left' %}
+            <div class="image-container">
+              {% if block.settings.custom_image %}
+                <img src="{{ block.settings.custom_image | image_url: width: 360, height: 240 }}" alt="{{ block.settings.product.title }}" width="360" height="240">
+              {% else %}
+                <img src="{{ block.settings.product.images[0] | image_url: width: 360, height: 240 }}" alt="{{ block.settings.product.title }}" width="360" height="240">
+              {% endif %}
+            </div>
+            <div class="text-container">
+              {% if block.settings.title_first %}
+                <h2>{{ block.settings.product.title }}</h2>
+              {% endif %}
+              <div class="description-container">
+                <p>{{ block.settings.product.description | strip_html}}</p>
+              </div>
+              {% if block.settings.title_first == false %}
+                <h2>{{ block.settings.product.title }}</h2>
+              {% endif %}
+            </div>
+          {% when 'image-right' %}
+            <div class="text-container">
+              {% if block.settings.title_first %}
+                <h2>{{ block.settings.product.title }}</h2>
+              {% endif %}
+              <div class="description-container">
+                <p>{{ block.settings.product.description | strip_html }}</p>
+              </div>
+              {% if block.settings.title_first == false %}
+                <h2>{{ block.settings.product.title }}</h2>
+              {% endif %}
+            </div>
+            <div class="image-container">
+              {% if block.settings.custom_image %}
+                <img src="{{ block.settings.custom_image | image_url: width: 360, height: 240 }}" alt="{{ block.settings.product.title }}" width="360" height="240">
+              {% else %}
+                <img src="{{ block.settings.product.images[0] | image_url: width: 360, height: 240 }}" alt="{{ block.settings.product.title }}" width="360" height="240">
+              {% endif %}
+            </div>
+          {% when 'image-center' %}
+            <div class="text-container">
+              {% if block.settings.title_first %}
+                <h2>{{ block.settings.product.title }}</h2>
+              {% endif %}
+            </div>
+            <div class="image-container center">
+              {% if block.settings.custom_image %}
+                <img src="{{ block.settings.custom_image | image_url: width: 360, height: 240 }}" alt="{{ block.settings.product.title }}" width="360" height="240">
+              {% else %}
+                <img src="{{ block.settings.product.images[0] | image_url: width: 360, height: 240 }}" alt="{{ block.settings.product.title }}" width="360" height="240">
+              {% endif %}
+            </div>
+            <div class="description-container">
+              {% if block.settings.title_first == false %}
+                <h2>{{ block.settings.product.title }}</h2>
+              {% endif %}
+              <p>{{ block.settings.product.description | strip_html }}</p>
+            </div>
+          {% when 'description-only' %}
+            <div class="description-container">
+              {% if block.settings.title_first %}
+                <h2>{{ block.settings.product.title }}</h2>
+              {% endif %}
+              <p>{{ block.settings.product.description | strip_html }}</p>
+              {% if block.settings.title_first == false %}
+                <h2>{{ block.settings.product.title }}</h2>
+              {% endif %}
+            </div>
+          {% when 'title-description-image' %}
+            <div class="text-container">
+              <h2>{{ block.settings.product.title }}</h2>
+            </div>
+            <div class="description-container">
+              <p>{{ block.settings.product.description | strip_html }}</p>
+            </div>
+            <div class="image-container">
+              {% if block.settings.custom_image %}
+                <img src="{{ block.settings.custom_image | image_url: width: 360, height: 240 }}" alt="{{ block.settings.product.title }}" width="360" height="240">
+              {% else %}
+                <img src="{{ block.settings.product.images[0] | image_url: width: 360, height: 240 }}" alt="{{ block.settings.product.title }}" width="360" height="240">
+              {% endif %}
+            </div>
+          {% when 'description-title-image' %}
+            <div class="description-container">
+              <p>{{ block.settings.product.description | strip_html }}</p>
+            </div>
+            <div class="text-container">
+              <h2>{{ block.settings.product.title }}</h2>
+            </div>
+            <div class="image-container">
+              {% if block.settings.custom_image %}
+                <img src="{{ block.settings.custom_image | image_url: width: 360, height: 240 }}" alt="{{ block.settings.product.title }}" width="360" height="240">
+              {% else %}
+                <img src="{{ block.settings.product.images[0] | image_url: width: 360, height: 240 }}" alt="{{ block.settings.product.title }}" width="360" height="240">
+              {% endif %}
+            </div>
+          {% when 'image-description-title' %}
+            <div class="image-container">
+              {% if block.settings.custom_image %}
+                <img src="{{ block.settings.custom_image | image_url: width: 360, height: 240 }}" alt="{{ block.settings.product.title }}" width="360" height="240">
+              {% else %}
+                <img src="{{ block.settings.product.images[0] | image_url: width: 360, height: 240 }}" alt="{{ block.settings.product.title }}" width="360" height="240">
+              {% endif %}
+            </div>
+            <div class="description-container">
+              <p>{{ block.settings.product.description | strip_html }}</p>
+            </div>
+            <div class="text-container">
+              <h2>{{ block.settings.product.title }}</h2>
+            </div>
+        {% endcase %}
+      </div>
+      <hr class="divider">
+    {% endfor %}
+    
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Horizontal Section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "content",
+      "name": "Content Block",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Select Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_image",
+          "label": "Custom Image (Optional)"
+        },
+        {
+          "type": "select",
+          "id": "layout",
+          "label": "Layout",
+          "options": [
+            {
+              "value": "image-left",
+              "label": "Image Left"
+            },
+            {
+              "value": "image-right",
+              "label": "Image Right"
+            },
+            {
+              "value": "image-center",
+              "label": "Image Center"
+            },
+            {
+              "value": "description-only",
+              "label": "Description Only"
+            },
+            {
+              "value": "title-description-image",
+              "label": "Title - Description - Image"
+            },
+            {
+              "value": "description-title-image",
+              "label": "Description - Title - Image"
+            },
+            {
+              "value": "image-description-title",
+              "label": "Image - Description - Title"
+            }
+          ],
+          "default": "image-center"
+        },
+        {
+          "type": "checkbox",
+          "id": "title_first",
+          "label": "Show Title Before Description",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Horizontal Section",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
