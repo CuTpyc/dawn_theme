@@ -117,5 +117,84 @@
   line-height: 36px;
   color: #42ABDE;
 }
-.swiper-button-next {}
-.swiper-button-prev {}
+
+.landing-swiper  .swiper-navigation {
+  display: flex;
+  justify-content: center; 
+  align-items: center;  
+  margin-top: 20px;  
+  text-align: center;
+}
+
+
+.landing-swiper .swiper-button-prev,
+.landing-swiper .swiper-button-next {
+  background-color: #F8F8F8; 
+  color: #42ABDE; 
+  padding: 10px 15px; 
+  border-radius: 100%; 
+  cursor: pointer;
+  margin: 0 10px;
+  position: relative; }
+
+  .landing-swiper .swiper-button-prev:after{
+    content: "←";
+    position: absolute;
+    top: -1px;
+  }
+  .landing-swiper .swiper-button-next:after {
+    content: "→";
+    position: absolute;
+    top: -1px;
+  }
+
+.landing-swiper .swiper-button-prev:hover,
+.landing-swiper .swiper-button-next:hover {
+  background-color: #42ABDE; 
+  color: #F8F8F8; 
+}
+
+
+@media (max-width: 1366px){
+  .collections-tabs {
+    gap: 40px;
+  }
+  .collection-tab {
+    font-size: 32px;
+    line-height: 48px;
+  }
+  .collection-tab span{
+    top: 10px;
+  }
+  .active-collection-tab {
+    font-size: 32px;
+    line-height: 48px;
+  }
+}
+
+@media (max-width: 768px){
+ 
+  .collection-tab {
+    font-size: 32px;
+    line-height: 48px;
+  }
+  
+  .active-collection-tab {
+    font-size: 32px;
+    line-height: 48px;
+  }
+}
+@media (max-width: 428px){
+  .collections-tabs {
+    
+  }
+  .collection-tab {
+    font-size: 24px;
+    line-height: 36px;
+  }
+  
+  .active-collection-tab {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
