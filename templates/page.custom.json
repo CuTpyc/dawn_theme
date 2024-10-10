@@ -192,12 +192,88 @@
       ],
       "settings": {
       }
+    },
+    "funny_slides_7QdTbt": {
+      "type": "funny-slides",
+      "blocks": {
+        "image_slide_LVBtQp": {
+          "type": "image_slide",
+          "settings": {
+            "image": "shopify://shop_images/slide1.png",
+            "alt_text": "Image description"
+          }
+        },
+        "image_slide_4zzJjk": {
+          "type": "image_slide",
+          "settings": {
+            "image": "shopify://shop_images/slide2.png",
+            "alt_text": "Image description"
+          }
+        },
+        "image_slide_bAhErp": {
+          "type": "image_slide",
+          "settings": {
+            "image": "shopify://shop_images/slide1.png",
+            "alt_text": "Image description"
+          }
+        },
+        "image_slide_Y6KQ8J": {
+          "type": "image_slide",
+          "settings": {
+            "image": "shopify://shop_images/slide2.png",
+            "alt_text": "Image description"
+          }
+        },
+        "image_slide_AzLqBF": {
+          "type": "image_slide",
+          "settings": {
+            "image": "shopify://shop_images/slide1.png",
+            "alt_text": "Image description"
+          }
+        },
+        "image_slide_D6Nd7z": {
+          "type": "image_slide",
+          "settings": {
+            "image": "shopify://shop_images/slide2.png",
+            "alt_text": "Image description"
+          }
+        },
+        "image_slide_PDgt8m": {
+          "type": "image_slide",
+          "settings": {
+            "image": "shopify://shop_images/slide1.png",
+            "alt_text": "Image description"
+          }
+        },
+        "image_slide_VtxkVY": {
+          "type": "image_slide",
+          "settings": {
+            "image": "shopify://shop_images/slide2.png",
+            "alt_text": "Image description"
+          }
+        }
+      },
+      "block_order": [
+        "image_slide_LVBtQp",
+        "image_slide_4zzJjk",
+        "image_slide_bAhErp",
+        "image_slide_Y6KQ8J",
+        "image_slide_AzLqBF",
+        "image_slide_D6Nd7z",
+        "image_slide_PDgt8m",
+        "image_slide_VtxkVY"
+      ],
+      "settings": {
+        "heading": "Lorem ipsum dolor sit amet",
+        "subheading": "Your subheading here"
+      }
     }
   },
   "order": [
     "main",
     "landing_swiper_qXQJat",
     "top_sellers_BCec3T",
-    "product_show_MRQyY6"
+    "product_show_MRQyY6",
+    "funny_slides_7QdTbt"
   ]
 }

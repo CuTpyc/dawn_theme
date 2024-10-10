@@ -1,0 +1,143 @@
+.product-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 1410px;
+    margin: 0 auto;
+    padding: 20px;
+    max-height: 900px;
+  }
+  
+  .product-info {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .product-info h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .product-info p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  .product-info ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .product-info .buy-now-btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .product-image-swiper {
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+  }
+  .product-image-swiper .swiper-slide{
+    position: relative;
+    z-index: 1000;
+  }
+  .product-image-swiper img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+  
+  .product-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .product-info-swiper .swiper-container {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 20px auto;
+  }
+  
+  .product-info-swiper .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+ 
+  
+  .product-info-swiper .swiper-container {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 20px auto;
+  }
+  
+  .product-info-swiper .swiper-slide {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+  }
+  
+  
+  .main-pagination,
+  .nested-pagination {
+    margin-top: 10px;
+  }
+  
+  .swiper-button-next, 
+  .swiper-button-prev {
+    color: #007bff;
+  }
+  
+  .swiper-button-next.main-next, 
+  .swiper-button-prev.main-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .swiper-button-next.main-next {
+    right: 10px;
+  }
+  
+  .swiper-button-prev.main-prev {
+    left: 10px;
+  }
+  
+  @media (min-width: 768px) {
+    .product-section {
+      flex-direction: row;
+    }
+  
+    .product-info {
+      width: 50%;
+    }
+  
+    .product-image-swiper {
+      width: 50%;
+    }
+  }

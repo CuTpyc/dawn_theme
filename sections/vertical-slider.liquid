@@ -1,0 +1,88 @@
+<link rel="stylesheet" href="{{ 'vertical-slider.css' | asset_url }}">
+<div class="product-section">
+  <div class="product-info-swiper swiper-container">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+      <div class="swiper-slide product-slide">
+        <div class="product-info">
+          <h2>{{ block.settings.product.title }}</h2>
+          <p>{{ block.settings.product.description }}</p>
+          <ul>
+            {% for option in block.settings.product.options_with_values %}
+            <li>{{ option.name }}: {{ option.values | join: ', ' }}</li>
+            {% endfor %}
+          </ul>
+          <a href="{{ block.settings.product.url }}" class="buy-now-btn">Buy now {{ block.settings.product.price | money }}</a>
+        </div>
+        <div class="product-image-swiper swiper-container nested-swiper">
+          <div class="swiper-wrapper">
+            {% for image in block.settings.product.images %}
+            <div class="swiper-slide product-nested-slide">
+              <img src="{{ image | image_url: width: 300, height: 300 }}" alt="{{ block.settings.product.title }}">
+            </div>
+            {% endfor %}
+          </div>
+          <div class="nested-pagination"></div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="swiper-button-prev main-prev"></div>
+    <div class="swiper-button-next main-next"></div>
+    <div class="main-pagination"></div>
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const mainSwiper = new Swiper('.product-info-swiper', {
+      direction: 'vertical',
+      slidesPerView: 1,
+      spaceBetween: 20,
+      navigation: {
+        nextEl: '.main-next',
+        prevEl: '.main-prev',
+      },
+      pagination: {
+        el: '.main-pagination',
+        clickable: true,
+      },
+      mousewheel: true,
+    });
+    // Initialize nested swipers
+    const nestedSwipers = document.querySelectorAll('.nested-swiper');
+    nestedSwipers.forEach((swiperEl) => {
+      const subSwiper = new Swiper(swiperEl, {
+        slidesPerView: 1,
+        pagination: {
+          el: swiperEl.querySelector('.nested-pagination'),
+          clickable: true,
+        },
+      });
+    });
+  });
+</script>
+{% schema %}
+{
+  "name": "Product Slider",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Select Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Slider",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
