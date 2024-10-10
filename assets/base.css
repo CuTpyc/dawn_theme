@@ -6,6 +6,13 @@
   --focused-base-outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
   --focused-base-outline-offset: 0.3rem;
   --focused-base-box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
+--color-white: #ffffff;
+  --color-black: #231f20;
+  --color-accent-blue: #42abde;
+  --color-accent-blue-hover: #2194cc;
+  --color-grey-text: #808080;
+  --color-border: #dddddd;
+  --color-card: #f8f8f8;
 }
 
 .product-card-wrapper .card,

@@ -154,6 +154,40 @@
         "title_alignment": "center"
       }
     },
+    "vertical_slider_DHcia4": {
+      "type": "vertical-slider",
+      "blocks": {
+        "product_slide_dqpreA": {
+          "type": "product-slide",
+          "settings": {
+            "product": "creatine-monohydrate",
+            "product_title": "",
+            "product_description": "",
+            "key_features": ""
+          }
+        },
+        "product_slide_PtriYq": {
+          "type": "product-slide",
+          "settings": {
+            "product": "mass-gainer",
+            "product_title": "",
+            "product_description": "",
+            "key_features": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_slide_dqpreA",
+        "product_slide_PtriYq"
+      ],
+      "settings": {
+        "image_position": "right",
+        "slider_controls_position": "row",
+        "show_slider_controls": false,
+        "anchor_link": "",
+        "margin_bottom": 20
+      }
+    },
     "product_show_MRQyY6": {
       "type": "product-show",
       "blocks": {
@@ -267,13 +301,91 @@
         "heading": "Lorem ipsum dolor sit amet",
         "subheading": "Your subheading here"
       }
+    },
+    "testimonials_CNiwkg": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_cQxqwQ": {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Mark Toried",
+            "testimonial_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  </p>",
+            "customer_subtext": "Bodybuilder",
+            "customer_image": "shopify://shop_images/customer.png",
+            "rating": 5
+          }
+        },
+        "testimonial_HdAViL": {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Mark Toried",
+            "testimonial_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  </p>",
+            "customer_subtext": "Bodybuilder",
+            "customer_image": "shopify://shop_images/customer.png",
+            "rating": 5
+          }
+        },
+        "testimonial_DExFcq": {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Mark Toried",
+            "testimonial_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  </p>",
+            "customer_subtext": "Bodybuilder",
+            "customer_image": "shopify://shop_images/customer.png",
+            "rating": 5
+          }
+        },
+        "testimonial_qmd3Nx": {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Mark Toried",
+            "testimonial_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  </p>",
+            "customer_subtext": "Bodybuilder",
+            "customer_image": "shopify://shop_images/customer.png",
+            "rating": 5
+          }
+        },
+        "testimonial_PkXNQa": {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Mark Toried",
+            "testimonial_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  </p>",
+            "customer_subtext": "Bodybuilder",
+            "customer_image": "shopify://shop_images/customer.png",
+            "rating": 5
+          }
+        },
+        "testimonial_6mmwBE": {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Mark Toried",
+            "testimonial_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  </p>",
+            "customer_subtext": "Bodybuilder",
+            "customer_image": "shopify://shop_images/customer.png",
+            "rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_cQxqwQ",
+        "testimonial_HdAViL",
+        "testimonial_DExFcq",
+        "testimonial_qmd3Nx",
+        "testimonial_PkXNQa",
+        "testimonial_6mmwBE"
+      ],
+      "settings": {
+        "anchor_link": ""
+      }
     }
   },
   "order": [
     "main",
     "landing_swiper_qXQJat",
     "top_sellers_BCec3T",
+    "vertical_slider_DHcia4",
     "product_show_MRQyY6",
-    "funny_slides_7QdTbt"
+    "funny_slides_7QdTbt",
+    "testimonials_CNiwkg"
   ]
 }

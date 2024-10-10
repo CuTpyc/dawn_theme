@@ -1,0 +1,155 @@
+<link rel="stylesheet" href="{{ 'testimonials.css' | asset_url }}">
+
+<div id="{{ section.settings.anchor_link }}" class="testimonials">
+  <div class="testimonials-title">
+    <h2>What our customers think</h2>
+    <p>Read what our customers have to say about our products and services</p>
+  </div>
+  
+  <div class="swiper-container testimonials-swiper testimonials-swiper-container">
+    <div class="testimonials-swiper-wrapper swiper-wrapper">
+      {% for block in section.blocks %}
+        <div class="testimonials-swiper-slide swiper-slide">
+          <div class="testimonial-person">
+            <div class="testimonial-person-image">
+              {% if block.settings.customer_image %}
+                <img src="{{ block.settings.customer_image | image_url: width: 75, height: 50 }}" alt="{{ block.settings.customer_name }}" class="testimonial-image" width="75" height="50">
+              {% else %}
+               <img src="{{ "cat.png" | asset_url }}" alt="{{ block.settings.customer_name }}" class="testimonial-image" width="75" height="50">
+              {% endif %}
+            </div>
+            <div class="testimonial-person-data">
+              <div class="testimonial-name">{{ block.settings.customer_name }}</div>
+              <div class="testimonial-subtext">{{ block.settings.customer_subtext }}</div>
+            </div>
+          </div>
+          <div class="testimonial-body">
+            <p class="testimonial-main-text">{{ block.settings.testimonial_text }}</p>
+            <div class="testimonial-rating">
+              {% for star in (1..block.settings.rating) %}
+                ★
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="swiper-navigation testimonials-navigation">
+    <div class="swiper-button-prev testimonials-button-prev"></div>
+    <div class="swiper-button-next testimonials-button-next"></div>
+  </div>
+</div>
+
+
+{% javascript %}
+document.addEventListener('DOMContentLoaded', function () {
+  const testimonialsSwiper = new Swiper('.testimonials-swiper-container', {
+    slidesPerView: 4,
+    pagination: {
+      el: '.testimonials-swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.testimonials-button-next',
+      prevEl: '.testimonials-button-prev',
+    },
+    on: {
+      slideChange: function () {
+        this.slides.forEach((slide, index) => {
+          if (index === this.activeIndex) {
+            slide.classList.add('swiper-slide-active');
+          } else {
+            slide.classList.remove('swiper-slide-active');
+          }
+        });
+      }
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        centeredSlides: true,
+        spaceBetween: 8,
+        loop: true,
+      },
+      428: {
+        slidesPerView: 1,
+        spaceBetween: 8,
+        loop: true,
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 8,
+        centeredSlides: true,
+        loop: true,
+      },
+      1366: {
+        slidesPerView: 3,
+        centeredSlides: true,
+        spaceBetween: 8,
+        loop: true,
+      }
+      
+    }
+  });
+});
+
+
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "settings": [
+    {
+      "type": "text",
+      "id": "anchor_link",
+      "label": "Anchor link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "text",
+          "id": "customer_name",
+          "label": "Customer Name"
+        },
+        {
+          "type": "richtext",
+          "id": "testimonial_text",
+          "label": "Testimonial Text"
+        },
+        {
+          "type": "text",
+          "id": "customer_subtext",
+          "label": "Customer Subtext"
+        },
+        {
+          "type": "image_picker",
+          "id": "customer_image",
+          "label": "Customer Image"
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "label": "Rating (1-5)",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials Slider",
+      "category": "custom"
+    }
+  ]
+}
+{% endschema %}
