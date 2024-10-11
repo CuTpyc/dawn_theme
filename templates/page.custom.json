@@ -400,6 +400,34 @@
         "show_circle": true,
         "show_number": true
       }
+    },
+    "text_section_tXc6tL": {
+      "type": "text-section",
+      "blocks": {
+        "text_block_btjJXw": {
+          "type": "text_block",
+          "settings": {
+            "title": "Discover The Health Project at Discount Supplements today!",
+            "text": "Find whey protein, mass gainers, health and wellness supplements and more in convenient capsules, pouches and bundles when you shop the range at Discount Supplements today! Or, to learn more about this great brand and its products, why not check out our blog?",
+            "subtitle": ""
+          }
+        },
+        "text_block_pXtRer": {
+          "type": "text_block",
+          "settings": {
+            "title": "The Health Project",
+            "text": "Introducing The Health Project, your go-to brand for a wide selection of supplements tailored to your health needs and fitness goals. Formerly Optimum Health, one of Discount Supplements' biggest sellers since 2010, you can find all the great products you'd expect from the brand in the same great flavours and formulas. So you can trust The Health Project to deliver the same gains and results that you've come to expect!",
+            "subtitle": "Each product within The Health Project brand features back-to-basics branding, making each product easier for both new and existing customers to understand. So, whether you're looking to add more whey or plant protein to your workouts or simply want to try out the brand with one of our supplement bundles, you'll find everything you need!"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_btjJXw",
+        "text_block_pXtRer"
+      ],
+      "settings": {
+        "background_color": "#ffffff"
+      }
     }
   },
   "order": [
@@ -410,6 +438,7 @@
     "product_show_MRQyY6",
     "funny_slides_7QdTbt",
     "testimonials_CNiwkg",
-    "faq_83mwt6"
+    "faq_83mwt6",
+    "text_section_tXc6tL"
   ]
 }

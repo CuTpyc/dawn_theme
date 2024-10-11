@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="{{ 'text-section.css' | asset_url }}">
+
+<div class="text-section" style="background-color: {{ section.settings.background_color }}">
+  {% for block in section.blocks %}
+    <div class="text-block">
+      <div class="text-block-main">
+        <h3 class="text-block-title">{{ block.settings.title }}</h3>
+        <p class="text-block-text">{{ block.settings.text }}</p>
+      </div>
+      <div class="text-block-sub">
+        {% if block.settings.subtitle != blank %}
+          <p class="text-block-subtitle">{{ block.settings.subtitle }}</p>
+        {% endif %}
+      </div>
+      
+    </div>
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Text Section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_block",
+      "name": "Text Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Your Title Here"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Your text goes here."
+        },
+        {
+          "type": "textarea",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Your subtitle goes here."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text Section",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
