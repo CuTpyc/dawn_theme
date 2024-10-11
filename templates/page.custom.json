@@ -428,6 +428,11 @@
       "settings": {
         "background_color": "#ffffff"
       }
+    },
+    "feedback_RfxHj7": {
+      "type": "feedback",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -439,6 +444,7 @@
     "funny_slides_7QdTbt",
     "testimonials_CNiwkg",
     "faq_83mwt6",
-    "text_section_tXc6tL"
+    "text_section_tXc6tL",
+    "feedback_RfxHj7"
   ]
 }

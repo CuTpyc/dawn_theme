@@ -1,0 +1,243 @@
+.promo-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #58aafc;
+    border-radius: 70px;
+  }
+  
+  .promo-content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    max-height: 138px;
+  }
+  
+  .promo-content small {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    color: white;
+  }
+  
+  .promo-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .promo-link-title{
+    font-size: 70px;
+    font-weight: 500;
+    line-height: 105px;
+    color: white;
+    position: relative;
+    text-decoration: underline;
+  }
+  
+  .promo-link-arrow{
+    font-size: 70px;
+    font-weight: 500;
+    line-height: 105px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .promo-link:hover {
+    text-decoration: none;
+  }
+  .promo-link:visited {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .promo-image {
+    border-radius: 70px;
+    max-width: 747px;
+    max-height: 600px;
+    overflow: hidden;
+  }
+
+  .promo-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .modal-content-top {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .modal-content-title{
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 21px;
+    color: #231F20;
+
+  }
+  .modal-content-divider{
+    color: #DDDDDD;
+
+  }
+
+
+  
+  .modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .modal-content input,
+  .modal-content textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    border: 1px solid #DDDDDD;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+
+  }
+  
+  .modal-content textarea{
+    height: 140px;
+  }
+
+  .modal-content button {
+    background-color: #58aafc;
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 21px;
+
+  }
+  
+  .modal-content button:hover {
+    background-color: #3a94e8;
+  }
+  
+  .close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+
+  @media (max-width: 1366px) {
+    .promo-content small {
+        font-size: 18px;
+        line-height: 27px;
+      }
+      
+      .promo-link {
+        
+      }
+    
+      .promo-link-title{
+        font-size: 60px;
+        line-height: 90px;
+      }
+      
+      .promo-link-arrow{
+        font-size: 60px;
+        line-height: 90px;
+      }
+      
+      
+      .promo-image {
+        max-width: 568px;
+        max-height: 456px;
+      }
+  }
+
+  @media (max-width: 1104px) {
+    .promo-block {
+        display: flex;
+        flex-direction: column-reverse;
+
+        justify-content: space-between;
+        align-items: center;
+        gap: 100px;
+        padding-bottom: 100px;
+      }
+
+      .promo-image {
+        max-width: 768px;
+        max-height: 615px;
+      }
+      
+  }
+  
+  @media (max-width: 768px) {
+    .promo-block {
+      
+    }
+    .promo-content {
+        margin-left: 1.2%;
+    }
+    .promo-image img {
+      
+    }
+    
+    .modal-content {
+      width: 80%;
+    }
+  }
+  
+  @media (max-width: 509px) {
+    .promo-content small {
+        font-size: 15px;
+        line-height: 21px;
+      }
+      
+      .promo-link {
+        
+
+      }
+    
+      .promo-link-title{
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 48px;
+      }
+      
+      .promo-link-arrow{
+        font-size: 32px;
+        line-height: 48px;
+      }
+  }
