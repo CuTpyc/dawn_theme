@@ -156,36 +156,7 @@
     },
     "vertical_slider_DHcia4": {
       "type": "vertical-slider",
-      "blocks": {
-        "product_slide_dqpreA": {
-          "type": "product-slide",
-          "settings": {
-            "product": "creatine-monohydrate",
-            "product_title": "",
-            "product_description": "",
-            "key_features": ""
-          }
-        },
-        "product_slide_PtriYq": {
-          "type": "product-slide",
-          "settings": {
-            "product": "mass-gainer",
-            "product_title": "",
-            "product_description": "",
-            "key_features": ""
-          }
-        }
-      },
-      "block_order": [
-        "product_slide_dqpreA",
-        "product_slide_PtriYq"
-      ],
       "settings": {
-        "image_position": "right",
-        "slider_controls_position": "row",
-        "show_slider_controls": false,
-        "anchor_link": "",
-        "margin_bottom": 20
       }
     },
     "product_show_MRQyY6": {
@@ -377,6 +348,57 @@
       "settings": {
         "anchor_link": ""
       }
+    },
+    "faq_83mwt6": {
+      "type": "FAQ",
+      "blocks": {
+        "faq_item_bwPXXi": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam."
+          }
+        },
+        "faq_item_CpYjLr": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam."
+          }
+        },
+        "faq_item_jBaGKf": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam."
+          }
+        },
+        "faq_item_XMzYAa": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam."
+          }
+        },
+        "faq_item_RPx9ma": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices?",
+            "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam."
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_bwPXXi",
+        "faq_item_CpYjLr",
+        "faq_item_jBaGKf",
+        "faq_item_XMzYAa",
+        "faq_item_RPx9ma"
+      ],
+      "settings": {
+        "show_circle": true,
+        "show_number": true
+      }
     }
   },
   "order": [
@@ -386,6 +408,7 @@
     "vertical_slider_DHcia4",
     "product_show_MRQyY6",
     "funny_slides_7QdTbt",
-    "testimonials_CNiwkg"
+    "testimonials_CNiwkg",
+    "faq_83mwt6"
   ]
 }

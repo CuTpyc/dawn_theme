@@ -1,0 +1,100 @@
+<link rel="stylesheet" href="{{ 'FAQ.css' | asset_url }}">
+
+<div class="faq-section">
+  <div class="faq-main-text">
+    <h2 class="faq-title">FAQ</h2>
+    <p class="faq-subtext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a nunc ultrices, feugiat augue vitae, accumsan quam. </p>
+  </div>
+  <div class="faq-body">
+  {% for faq in section.blocks %}
+    <div class="faq-item">
+      <div class="faq-question">
+        {% if section.settings.show_circle %}
+          <div class="circle"></div>
+        {% endif %}
+        {% if section.settings.show_number %}
+          <div class="number">{{ forloop.index }}.</div>
+        {% endif %}
+        <p>{{ faq.settings.question }}</p>
+        <p class="plus">+</p>
+      </div>
+      <div class="faq-answer">
+        <p>{{ faq.settings.answer }}</p>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(item => {
+    item.addEventListener('click', () => {
+      const faqItem = item.parentElement;
+      const plusIcon = item.querySelector('.plus');
+      
+      // Закрываем все остальные
+      document.querySelectorAll('.faq-item').forEach(i => {
+        if (i !== faqItem) {
+          i.classList.remove('active');
+          i.querySelector('.plus').textContent = '+'; // Возвращаем плюсик
+        }
+      });
+
+      // Переключаем активный класс
+      faqItem.classList.toggle('active');
+      
+      // Меняем плюс на минус и обратно
+      plusIcon.textContent = faqItem.classList.contains('active') ? '−' : '+';
+    });
+  });
+</script>
+
+
+<style>
+  
+</style>
+
+{% schema %}
+{
+  "name": "FAQ Section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_circle",
+      "label": "Показувати кружечок",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_number",
+      "label": "Показувати нумерацію",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ Section",
+      "category": "Custom"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Вопрос"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Ответ"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10
+}
+{% endschema %}
